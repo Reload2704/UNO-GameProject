@@ -15,5 +15,5 @@ Este proyecto implementa el popular juego de cartas UNO utilizando los principio
 
 ## Contribuidores
 - Jorge Andres Bravo Vidal (https://github.com/Reload2704)
-- Karla Teresa Velasco Navarro
-- Maria Paula Chavez Barreno
+- Karla Teresa Velasco Navarro (https://github.com/greenkarla)
+- Maria Paula Chavez Barreno (https://github.com/mapachavez)
