@@ -16,4 +16,10 @@ public class CartaEspecial extends Carta{
     public TipoEspecial getTipo() {
         return tipo;
     }
+
+
+    /// realizar las demas clases
+    public static boolean cartapaz(){
+        return false;
+    }
 }
