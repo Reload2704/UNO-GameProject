@@ -16,6 +16,8 @@ public class CartaEspecial extends Carta{
     public TipoEspecial getTipo() {
         return tipo;
     }
-
+    public String toString(){
+        return  "baraja" + super.getColor() + tipo ; 
+    }
 
 }
