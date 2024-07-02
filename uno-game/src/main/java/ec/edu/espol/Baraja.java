@@ -1,16 +1,23 @@
 package ec.edu.espol;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Random;
+
 
 public class Baraja {
-    private ArrayList<Carta> cartas;
+    private static ArrayList<Carta> cartas;
 
-    public ArrayList<Carta> getCartas() {
-        return cartas;
+    ArrayList<Carta> masoCarta = new ArrayList<>();
+
+    Random azar = new Random();
+    for(int i= 0; i<8; i++){
+        
     }
+
+
     
-    public void barajar(){
-        Collections.shuffle(cartas);
+    //public void barajar(){
+        //Collections.shuffle(cartas);
          // esto nos servira para mezclar las cartas de la baraja
     }
 

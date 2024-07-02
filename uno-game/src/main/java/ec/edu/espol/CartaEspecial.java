@@ -18,8 +18,4 @@ public class CartaEspecial extends Carta{
     }
 
 
-    /// realizar las demas clases
-    public static boolean cartapaz(){
-        return false;
-    }
 }

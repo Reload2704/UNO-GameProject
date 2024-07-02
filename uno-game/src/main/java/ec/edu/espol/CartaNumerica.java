@@ -15,4 +15,6 @@ public class CartaNumerica extends Carta{
     public int getValor() {
         return valor;
     }
+
+    
 }
