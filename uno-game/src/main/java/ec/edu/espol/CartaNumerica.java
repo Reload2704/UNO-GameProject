@@ -15,6 +15,8 @@ public class CartaNumerica extends Carta{
     public int getValor() {
         return valor;
     }
-
+    public String toString(){
+        return  "baraja" + super.getColor() + valor ; 
+    }
     
 }
