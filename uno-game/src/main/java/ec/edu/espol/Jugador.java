@@ -5,20 +5,26 @@ public class Jugador {
     private String nombre;
     private ArrayList<Carta> mano = new ArrayList<>();
 
-    public Jugador(String nombre){
+    public Jugador(String nombre, ArrayList<Carta> mano){
         this.nombre = nombre;
-        for(int i= 0; i<7; i++){
-            mano.add(Baraja.cartasBarajadas().remove(i));
-        } 
+        this.mano = mano;
     }
+    public Jugador(ArrayList<Carta> mano){
+        this("Maquina", mano);
+    }
+    
     public Carta jugarCarta(int indice){
         Carta newcarta = mano.remove(indice);
         return newcarta;
     }
-    public void robarCarta(){
+
+    //Revisar este metodo (creo que es un metodo de Juego):
+
+    /*public void robarCarta(){
         Carta robarc = Baraja.cartasBarajadas().remove(0);
         mano.add(robarc);
-    }
+    }*/
+
     //Getters 
     public String getNombre() {
         return nombre;
