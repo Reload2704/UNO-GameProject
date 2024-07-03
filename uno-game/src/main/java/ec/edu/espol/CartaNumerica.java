@@ -18,7 +18,7 @@ public class CartaNumerica extends Carta{
 
     @Override
     public String toString() {
-        return "CartaNumerica [color=" + color + ", valor=" + valor + "]";
+        return "["+color + ":" + valor + "]";
     }
     
 }
