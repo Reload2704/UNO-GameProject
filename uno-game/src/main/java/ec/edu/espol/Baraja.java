@@ -1,5 +1,7 @@
 package ec.edu.espol;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Random;
 
 
 public class Baraja {
@@ -44,7 +46,11 @@ public class Baraja {
             }
             return cartas;
     }
+    public static ArrayList<Carta> cartasBarajadas(){
+        Random azar = new Random();
+        ArrayList<Carta> cartasBarajadas = new ArrayList<>(Baraja.maso());
+        Collections.shuffle(cartasBarajadas, azar);
+        return cartasBarajadas;
+    } 
 
-
-    
 }

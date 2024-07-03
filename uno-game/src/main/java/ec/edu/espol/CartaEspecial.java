@@ -17,6 +17,7 @@ public class CartaEspecial extends Carta{
         return tipo;
     }
     @Override
+    // implemente esto para imprimir las cartas y saber si estaba bien.
     public String toString() {
         return "CartaEspecial [color=" + color + ", tipo=" + tipo + "]";
     }
