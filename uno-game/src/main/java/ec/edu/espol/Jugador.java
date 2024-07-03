@@ -8,7 +8,7 @@ public class Jugador {
     public Jugador(String nombre){
         this.nombre = nombre;
         for(int i= 0; i<7; i++){
-            mano.add(Baraja.cartasBarajadas().get(i));
+            mano.add(Baraja.cartasBarajadas().remove(i));
         } 
     }
     public Carta jugarCarta(int indice){
