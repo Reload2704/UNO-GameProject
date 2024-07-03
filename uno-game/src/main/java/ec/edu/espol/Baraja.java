@@ -1,6 +1,5 @@
 package ec.edu.espol;
 import java.util.ArrayList;
-import java.util.Random;
 
 
 public class Baraja {
@@ -46,12 +45,6 @@ public class Baraja {
             return cartas;
     }
 
-    
-
-    //public Carta robarCarta(){
-        //Carta c = cartas.remove(0);
-        //return c;
-    //}
 
     
 }

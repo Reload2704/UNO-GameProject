@@ -16,11 +16,6 @@ public class Jugador {
         }
         return mano;   
     }
-    
-    
-        
-
-
     public Carta jugarCarta(int indice){
         Carta newcarta = mano.remove(indice);
         return newcarta;
