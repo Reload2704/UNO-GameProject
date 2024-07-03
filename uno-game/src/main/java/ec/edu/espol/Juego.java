@@ -11,11 +11,7 @@ public class Juego {
     private boolean turno;
 
 
-    public void barajar(){
-        Random azar = new Random();
-        Collections.shuffle(Baraja.maso(), azar);
-    }
-
+    
     public   
 
 

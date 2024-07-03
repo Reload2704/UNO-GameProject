@@ -1,18 +1,21 @@
 package ec.edu.espol;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Random;
 
 public class Jugador {
     private String nombre;
     private ArrayList<Carta> mano;
 
-    Random azar = new Random();
-        for(int i= 0; i<8; i++){
-            int indice = azar.nextInt(Baraja.maso().size());  /// creo que esto esta mal porque debemos indexar en al baraja que hay que crearse. 
-            Color aleColor = ;
-            Carta Cardnew = new CartaNumerica(aleColor, indice);
-            mano.add(Cardnew);
+    public ArrayList<Carta> manoJugador(){
+        Random azar = new Random();
+        ArrayList<Carta> cartasBarajadas = new ArrayList<>(Baraja.maso());
+        Collections.shuffle(cartasBarajadas, azar);
+        for(int i= 0; i<7; i++){
+            mano.add(cartasBarajadas.get(i));
         }
+        return mano;   
+    }
     
         
 
