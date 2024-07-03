@@ -6,15 +6,14 @@ public class Jugador {
     private String nombre;
     private ArrayList<Carta> mano;
 
-    Color [] color = Color.values();
-        Random azar = new Random();{
-            for(int i= 0; i<8; i++){
-                int indice = azar.nextInt(color.length);  /// creo que esto esta mal porque debemos indexar en al baraja que hay que crearse. 
-                Color aleColor = color[indice];
-                Carta Cardnew = new CartaNumerica(aleColor, indice);
-                mano.add(Cardnew);
-            }
+    Random azar = new Random();
+        for(int i= 0; i<8; i++){
+            int indice = azar.nextInt(Baraja.maso().size());  /// creo que esto esta mal porque debemos indexar en al baraja que hay que crearse. 
+            Color aleColor = ;
+            Carta Cardnew = new CartaNumerica(aleColor, indice);
+            mano.add(Cardnew);
         }
+    
         
 
 

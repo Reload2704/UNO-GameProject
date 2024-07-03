@@ -1,12 +1,11 @@
 package ec.edu.espol;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Random;
 
 
 public class Baraja {
 
-    public static void masoColores(){
+    public static ArrayList<Carta> maso(){
         ArrayList<Carta> cartas = new ArrayList<>();
             for(int a = 0; a<10; a++){
                 Carta cartaRojo = new CartaNumerica(Color.ROJO, a);
@@ -44,17 +43,9 @@ public class Baraja {
                     }
                 }
             }
+            return cartas;
     }
 
-
-    
-   
-
-
-    //public void barajar(){
-        //Collections.shuffle(cartas);
-         // esto nos servira para mezclar las cartas de la baraja
-    //}
     
 
     //public Carta robarCarta(){
