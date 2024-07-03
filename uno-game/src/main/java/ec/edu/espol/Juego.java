@@ -1,7 +1,6 @@
 package ec.edu.espol;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Random;
+
 
 public class Juego {
     private ArrayList<Carta> baraja;
@@ -12,11 +11,7 @@ public class Juego {
 
 
     
-    public   
+     
 
 
-
-    public void juegoLinea(){
-        
-    }
 }

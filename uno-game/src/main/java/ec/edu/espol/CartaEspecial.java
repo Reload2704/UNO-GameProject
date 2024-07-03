@@ -16,6 +16,10 @@ public class CartaEspecial extends Carta{
     public TipoEspecial getTipo() {
         return tipo;
     }
-
+    @Override
+    public String toString() {
+        return "CartaEspecial [color=" + color + ", tipo=" + tipo + "]";
+    }
+    
 
 }

@@ -29,5 +29,11 @@ public abstract class Carta {
 
     public CartaEspecial getEspecial() {
         return especial;
+    }
+
+    @Override
+    public String toString() {
+        return "Carta [color=" + color + ", numero=" + numero + ", especial=" + especial + "]";
     } 
+
 }

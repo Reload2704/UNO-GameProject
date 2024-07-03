@@ -17,12 +17,22 @@ public class Jugador {
         return mano;   
     }
     
+    
         
 
 
     public Carta jugarCarta(int indice){
         Carta newcarta = mano.remove(indice);
         return newcarta;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+
+    public ArrayList<Carta> getMano() {
+        return mano;
     }
 
     //public void robarCarta(Baraja baraja){
