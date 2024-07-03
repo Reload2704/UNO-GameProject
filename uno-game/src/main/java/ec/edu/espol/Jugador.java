@@ -3,13 +3,13 @@ import java.util.ArrayList;
 
 public class Jugador {
     private String nombre;
-    private ArrayList<Carta> mano;
+    private ArrayList<Carta> mano = new ArrayList<>();
 
-    public ArrayList<Carta> manoJugador(){
+    public Jugador(String nombre){
+        this.nombre = nombre;
         for(int i= 0; i<7; i++){
             mano.add(Baraja.cartasBarajadas().get(i));
-        }
-        return mano;   
+        } 
     }
     public Carta jugarCarta(int indice){
         Carta newcarta = mano.remove(indice);
@@ -25,5 +25,6 @@ public class Jugador {
     }
     public ArrayList<Carta> getMano() {
         return mano;
-    }   
+    }
+    
 }
