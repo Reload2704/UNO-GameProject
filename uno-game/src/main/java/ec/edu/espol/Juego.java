@@ -9,9 +9,6 @@ public class Juego {
     private ArrayList<Carta> lineaDeJuego;
     private boolean turno;
 
-
     
-     
-
 
 }
