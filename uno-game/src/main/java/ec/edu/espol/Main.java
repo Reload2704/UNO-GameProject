@@ -16,6 +16,7 @@ public class Main {
         ArrayList<Carta> baraja = Utilitaria.crearBaraja();
         ArrayList<Carta> lineaJuego = new ArrayList<>();
 
+        //Codigo para agregar 1 carta en Linea de Juego que no sea comodin
         while (lineaJuego.isEmpty()) {
             int numal = rd.nextInt(baraja.size());
             Carta cr = baraja.get(numal);
@@ -24,5 +25,6 @@ public class Main {
                 baraja.remove(cr);
             }
         }
+        Juego juego = new Juego();
     }
 }
