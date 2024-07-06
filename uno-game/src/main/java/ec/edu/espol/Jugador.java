@@ -28,5 +28,8 @@ public class Jugador {
     public ArrayList<Carta> getMano() {
         return mano;
     }
+    public void setMano(ArrayList<Carta> mano) {
+        this.mano = mano;
+    }
     
 }
