@@ -5,12 +5,8 @@ public class Jugador {
     private String nombre;
     private ArrayList<Carta> mano = new ArrayList<>();
 
-    public Jugador(String nombre, ArrayList<Carta> mano){
+    public Jugador(String nombre){
         this.nombre = nombre;
-        this.mano = mano;
-    }
-    public Jugador(ArrayList<Carta> mano){
-        this("Maquina", mano);
     }
     
     public Carta jugarCarta(int indice){
