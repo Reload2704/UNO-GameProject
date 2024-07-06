@@ -13,13 +13,9 @@ public class Jugador {
         Carta newcarta = mano.remove(indice);
         return newcarta;
     }
-
-    //Revisar este metodo (creo que es un metodo de Juego):
-
-    /*public void robarCarta(){
-        Carta robarc = Baraja.cartasBarajadas().remove(0);
-        mano.add(robarc);
-    }*/
+    public void anadirCarta(Carta carta){
+        mano.add(carta);
+    }
 
     //Getters 
     public String getNombre() {

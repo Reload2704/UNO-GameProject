@@ -35,6 +35,13 @@ public class Juego {
         } else{
             System.out.println("Mala suerte, has perdido!");
         }
+
+        /* ------------- Notas -------------
+         * Para robar carta seria: jugador.anadirCarta(robarCarta()) y maquina.anadirCarta(robarCarta());
+         * Habria que crear un metodo en Jugador que permita agregar listas de cartas (anadirCartas(ArrayList<Carta> cartas))
+         * Habria que crear un metodo en Juego que devuelva una lista de cartas ArrayList<Carta> robarCartas()
+         * Los dos metodos anteriores serviran al momento de usar un +2 o +4
+        */
     }
     public ArrayList<Carta> crearMano(){
         Random rd = new Random();
@@ -44,7 +51,9 @@ public class Juego {
         }
         return manoJug;
     }
-    
+    public Carta robarCarta(){
+        return baraja.remove(baraja.size()-1);
+    }
     @Override
     public String toString() {
         return "Linea de Juego: " + lineaDeJuego;
