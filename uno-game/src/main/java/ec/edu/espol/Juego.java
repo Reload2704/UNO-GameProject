@@ -7,8 +7,11 @@ public class Juego {
     private Jugador maquina;
     private ArrayList<Carta> lineaDeJuego;
     
-    public Juego(){
-        
+    public Juego(ArrayList<Carta> baraja, Jugador jugador, Jugador maquina, ArrayList<Carta> lineaDeJuego) {
+        this.baraja = baraja;
+        this.jugador = jugador;
+        this.maquina = maquina;
+        this.lineaDeJuego = lineaDeJuego;
     }
 
     public void setBaraja(ArrayList<Carta> baraja) {

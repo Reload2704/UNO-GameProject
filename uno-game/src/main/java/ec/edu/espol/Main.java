@@ -25,6 +25,6 @@ public class Main {
                 baraja.remove(cr);
             }
         }
-        Juego juego = new Juego();
+        Juego juego = new Juego(baraja,jug1,maq,lineaJuego);
     }
 }
