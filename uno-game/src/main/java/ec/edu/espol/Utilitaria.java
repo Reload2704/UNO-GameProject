@@ -6,7 +6,7 @@ public class Utilitaria {
     
     public static ArrayList<Carta> crearBaraja(){
         ArrayList<Carta> baraja = new ArrayList<>();
-
+//Se agrega 9 cartas de cada color a la baraja
         for(int a = 0; a<10; a++){
             Carta cartaRojo = new CartaNumerica(Color.ROJO, a);
             baraja.add(cartaRojo);
