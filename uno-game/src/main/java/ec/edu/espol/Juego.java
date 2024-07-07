@@ -47,7 +47,7 @@ public class Juego {
 
             //Primera regla
             if (cartaajugar instanceof CartaNumerica){
-            if(){
+            if(esIgualCyN(cartaajugar, ultcarta)){
                 lineaDeJuego.add(cartaajugar);
                 jugador.jugarCarta(position);
                 turno=turno*-1;
@@ -63,9 +63,7 @@ public class Juego {
                 System.err.println(colornew);
             }
             //Segunda regla
-            else if(cartaajugar instanceof CartaEspecial){
-                CartaEspecial playercarta=(CartaEspecial)cartaajugar;
-                if((cartaajugar.getColor()==(ultcarta.getColor()))){
+            else if
                     lineaDeJuego.add(cartaajugar);
                     jugador.getMano().remove(cartaajugar);
                     turno=turno*-1;
@@ -132,6 +130,17 @@ public class Juego {
        else
        return false;
     }
+    //Segunda condición
+    public boolean esCondicion2(Carta cartaajugar, Carta ulCarta){
+        if(cartaajugar instanceof CartaEspecial){
+            CartaEspecial playercarta=(CartaEspecial)cartaajugar;
+            if(cartaajugar.getColor()==(ulCarta.getColor())){
+                return true;
+            }
+        }
+        else
+            return false;
+        }
 
     @Override
     public String toString() {
