@@ -110,33 +110,36 @@ public class Juego {
         
         }
         if(turno==1){
-            System.out.println(maquina.getMano());
-                System.out.println(lineaDeJuego);
+            System.out.println("Mano maquina"+maquina.getMano());
+                System.out.println("Linea de juego"+lineaDeJuego);
     
                 Carta ultcarta=lineaDeJuego.get(lineaDeJuego.size()-1);
-                System.out.println(ultcarta);
+                System.out.println("Ultima carta"+ultcarta);
                 
             int i;
-            for(i=0; i< maquina.getMano().size() ;i++);
+            int banderacarta=0;
+            for(i=0; banderacarta==0 ;i++){
             int posicion= i;
-            Carta cartaajugar=jugador.getMano().get(posicion);
-            
+            Carta cartaajugar=maquina.getMano().get(posicion);
+            System.out.println("Carta agarrada"+cartaajugar);
             System.out.println(cartaajugar);
                     //Primera regla
-                    if(esIgualCyN(cartaajugar, ultcarta)){
-                        lineaDeJuego.add(cartaajugar);
-                        jugador.jugarCarta(posicion);
-                        turno=0;
-                        System.out.println("Validacion1.2");
-                    }
+                if(esIgualCyN(cartaajugar, ultcarta)){
+                    lineaDeJuego.add(cartaajugar);
+                    jugador.jugarCarta(posicion);
+                    turno=0;
+                    banderacarta=1;
+                    System.out.println("Validacion1.2");
+                }
                     
                
                 //Segunda regla
                 else if(esCondicion2(cartaajugar, ultcarta)){
-                        lineaDeJuego.add(cartaajugar);
-                        maquina.getMano().remove(cartaajugar);
-                        turno=0;
-                        System.out.println("prueba 2");
+                    lineaDeJuego.add(cartaajugar);
+                    maquina.getMano().remove(cartaajugar);
+                    turno=0;
+                    banderacarta=1;
+                    System.out.println("prueba 2");
                  }
     
                 //Tercera regla
@@ -152,6 +155,7 @@ public class Juego {
                     maquina.jugarCarta(posicion);
     
                     turno=0;
+                    banderacarta=1;
                 }
                 //quinta regla
     
@@ -163,6 +167,7 @@ public class Juego {
                 }
                 
         }
+    }
         } 
     
         if (jugador.getMano().isEmpty()){
