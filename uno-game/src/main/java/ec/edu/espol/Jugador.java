@@ -20,7 +20,9 @@ public class Jugador {
             if(c instanceof CartaNumerica){
                 CartaNumerica cn = (CartaNumerica) c;
                 if(Utilitaria.esIgualCyN(cn, ultCard)){
-                    return cn;
+                    CartaNumerica cnret = cn;
+                    mano.remove(cn);
+                    return cnret;
                 }
             } else {
                 CartaEspecial ce = (CartaEspecial) c;
