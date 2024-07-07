@@ -34,6 +34,9 @@ public abstract class Carta {
     @Override
     public String toString() {
         return "Carta [color=" + color + ", numero=" + numero + ", especial=" + especial + "]";
-    } 
+    }
 
+    public void setColor(Color color) {
+        this.color = color;
+    }
 }
