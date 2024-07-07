@@ -87,7 +87,7 @@ public class Juego {
                     System.out.println("Vuelve a ser su turno");
                 }
             
-                //Cuarta regla
+                //Cuarta regla(SOLO PARA AGARRAR CARTA)
                 else if(iscomodin(ultcarta)){ //se usa la validacion que indica si es +2 o +4 (true basta que solo 1 sea)
                     System.out.println("Validacion4");
                     Random rd = new Random();
@@ -103,7 +103,15 @@ public class Juego {
 
                  }
                  turno=1;
-            }
+                 }
+
+                 //Cuarta regla pt2. (PARA AGREGAR A LINEA DE JUEGO CARTAS +2 Y +4)
+                 else if(iscomodincartajuego(cartaajugar,ultcarta)){
+                    lineaDeJuego.add(cartaajugar);
+                    jugador.getMano().remove(cartaajugar);
+                    turno=1;
+                    System.out.println("validacion agregar+2 y +4 /n");
+                 }
 
             else 
             System.out.println("Su carta no es valida, por favor repita");
@@ -248,10 +256,10 @@ public class Juego {
         return false;
     }
 
-    //Cuarta condición(recibe la ultimacarta de linea de juego e indica si es un +2 o +4)
-    public boolean iscomodin(Carta ulCarta){
-        if(ulCarta instanceof CartaEspecial){
-        CartaEspecial ct=(CartaEspecial)ulCarta;
+    //Cuarta condición(recibe la ultimacarta de linea de juego o la carta de juego  e indica si es un +2 o +4)
+    public boolean iscomodin(Carta cartaplay){
+        if(cartaplay instanceof CartaEspecial){
+        CartaEspecial ct=(CartaEspecial)cartaplay;
             if(ct.getTipo()==(TipoEspecial.MAS2) || ct.getTipo()==(TipoEspecial.MAS4)){
                 return true;
              }
@@ -294,6 +302,20 @@ public class Juego {
             CartaEspecial ct=(CartaEspecial)ulCarta;
             CartaEspecial playercarta=(CartaEspecial)cartaajugar;
             if(ct.getTipo()==playercarta.getTipo()){
+                return true;
+            }
+            return false;
+        }
+        return false;
+    }
+
+    //ESta validadacion se usa para agregar a linea de juego cartas +2 y +4
+    //Primero se verifica si es especial, se le hace downcasting, comparamos si
+    //es un +2 o +4 Y SI TIENE EL MISMO COLOR QUE LA ULTIMA CARTA DE LINEA DE JUEGO
+    public boolean iscomodincartajuego(Carta cartaajugar, Carta ulCarta){
+        if (cartaajugar instanceof CartaEspecial) {
+            CartaEspecial playercarta=(CartaEspecial)cartaajugar;
+            if((playercarta.getTipo()==TipoEspecial.MAS2||playercarta.getTipo()==TipoEspecial.MAS4)&& cartaajugar.getColor()==(ulCarta.getColor())){
                 return true;
             }
             return false;
