@@ -41,7 +41,7 @@ public class Juego {
             Carta cartaajugar=jugador.getMano().get(position);
             System.out.println(cartaajugar);
             //Primera regla
-            if(cartaajugar.getColor().equals(ultcarta.getColor()) || cartaajugar.getNumero().equals(ultcarta.getNumero())){
+            if(cartaajugar.getColor()==(ultcarta.getColor()) || cartaajugar.getNumero()==ultcarta.getNumero()){
                 lineaDeJuego.add(cartaajugar);
                 jugador.jugarCarta(position);
                 System.out.println("1");
@@ -49,12 +49,13 @@ public class Juego {
             }
             //Segunda regla
             else if(cartaajugar instanceof CartaEspecial){
-                if(cartaajugar.getColor().equals(ultcarta.getColor())){
+                if(cartaajugar.getColor()==(ultcarta.getColor())){
                     lineaDeJuego.add(cartaajugar);
                     jugador.getMano().remove(cartaajugar);
-                    System.out.println("2");
+                    System.out.println("prueba 2");
                 }
                 //Tercera regla
+                else if (cartaajugar.getColor()==(Color.NEGRO)){
                     System.out.println("¿Cuál será el color para el siguiente turno?");
                     String colornew= sc.nextLine();
                 }
@@ -63,6 +64,7 @@ public class Juego {
             if(ultcarta instanceof CartaEspecial){
                 Random rd = new Random();
                 CartaEspecial ct=(CartaEspecial)ultcarta;
+                if(ct.getTipo()==(TipoEspecial.MAS2) || ct.getTipo()==(TipoEspecial.MAS4)){
                     if(turno==0)
                     for(int i = 0; i<4; i++){
                         jugador.getMano().add(baraja.remove(rd.nextInt(baraja.size())));
