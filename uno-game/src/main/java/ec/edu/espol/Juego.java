@@ -141,7 +141,18 @@ public class Juego {
         else
             return false;
         }
+    
+    //Tercera condición
 
+    public boolean esNegro(Carta cartaajugar){
+        if(cartaajugar.getColor()==(Color.NEGRO)){
+            return true;
+        }
+        else
+        return false;
+    }
+
+    
     @Override
     public String toString() {
         return "Linea de Juego: " + lineaDeJuego;
