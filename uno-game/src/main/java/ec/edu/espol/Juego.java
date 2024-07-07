@@ -43,7 +43,7 @@ public class Juego {
             //Primera regla
             if(cartaajugar.getColor().equals(ultcarta.getColor()) || cartaajugar.getNumero().equals(ultcarta.getNumero())){
                 lineaDeJuego.add(cartaajugar);
-                jugador.getMano().remove(cartaajugar);
+                jugador.jugarCarta(position);
                 System.out.println("1");
                 turno=1;
             }
@@ -59,8 +59,16 @@ public class Juego {
                     System.out.println("¿Cuál será el color para el siguiente turno?");
                     String colornew= sc.nextLine();
                 }
-
             }
+            //Cuarta regla
+            if(ultcarta instanceof CartaEspecial){
+                CartaEspecial ct=(CartaEspecial)ultcarta;
+                if(ct.getTipo().equals("MAS2") || ct.getTipo().equals("MAS4")){
+                    if(turno==0)
+                    jugador.getMano().add()
+                }
+            }
+
             System.out.println(jugador.getMano());
             System.out.println(lineaDeJuego);
         }
