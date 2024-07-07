@@ -26,8 +26,8 @@ public class Juego {
         System.out.println("Mano del jugador "+maquina.getNombre()+": "+ maquina.getMano());
         System.out.println("\n"+this);
 
-        //Se refieren al turno maquina (1) y turno jugador (0)
-        int turno=0;
+        //Se refieren al turno maquina (-1) y turno jugador (1)
+        int turno=1;
 
         while (!jugador.getMano().isEmpty() || !maquina.getMano().isEmpty()) {
             /*Aqui va la lógica completa del juego.
@@ -41,7 +41,16 @@ public class Juego {
             System.out.println("¿Cuál es su carta a jugar? (Indique la posición)");
             int position= sc.nextInt()-1;
             sc.nextLine();
-            Carta cartaajugar=jugador.getMano().get(position);
+            Carta cartaajugar;
+            if (turno==1) {
+                cartaajugar=jugador.getMano().get(position);   
+            }
+            else if (turno ==0){
+                for(Carta carta:maquina.getMano()){
+                cartaajugar=maquina.getMano().get(position);
+                }
+            }
+            
             System.out.println(cartaajugar);
 
             //Primera regla
@@ -49,7 +58,7 @@ public class Juego {
             if(cartaajugar.getColor().equals(ultcarta.getColor()) || cartaajugar.getNumero().equals(ultcarta.getNumero())){
                 lineaDeJuego.add(cartaajugar);
                 jugador.jugarCarta(position);
-                turno=1;
+                turno=turno*-1;
             }
             }
 
@@ -64,10 +73,12 @@ public class Juego {
             //Segunda regla
             else if(cartaajugar instanceof CartaEspecial){
                 CartaEspecial playercarta=(CartaEspecial)cartaajugar;
-                if((cartaajugar.getColor()==(ultcarta.getColor())) || (!(playercarta.getTipo().equals(TipoEspecial.REVERSE) || playercarta.getTipo().equals(TipoEspecial.BLOQUEO)))){
+                if((cartaajugar.getColor()==(ultcarta.getColor()))){
                     lineaDeJuego.add(cartaajugar);
                     jugador.getMano().remove(cartaajugar);
+                    turno=turno*-1;
                     System.out.println("prueba 2");
+                    
                 }
 
                 //quinta regla
