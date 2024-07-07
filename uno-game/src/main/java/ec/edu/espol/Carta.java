@@ -30,8 +30,9 @@ public abstract class Carta {
     public CartaEspecial getEspecial() {
         return especial;
     }
-    public void setColor(Color color) {
+    public CartaEspecial setColor(Color color) {
         this.color = color;
+        return especial;
     }
 
     @Override

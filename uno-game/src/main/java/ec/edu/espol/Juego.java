@@ -77,9 +77,13 @@ public class Juego {
                     else if(Utilitaria.isNegro(CEajugar)){
                         System.out.println("¿Cuál será el color para el siguiente turno?");
                         String colornew= sc.nextLine();
-                        lineaDeJuego.add(CEajugar);
+                        Color [] colores ={Color.ROJO,Color.AMARILLO,Color.VERDE,Color.AZUL};
+                        CartaEspecial cartaCambiada=CEajugar;
+                        cartaCambiada.setColor(Color.valueOf(colornew));
+                        lineaDeJuego.add(cartaCambiada);
                         jugador.jugarCarta(position);
                         System.out.println(colornew);
+                        System.out.println("Linea de juego x:" + lineaDeJuego);
                         sc.close();
                         turno=1;
                     }
