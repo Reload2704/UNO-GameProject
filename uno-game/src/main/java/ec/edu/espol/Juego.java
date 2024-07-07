@@ -19,6 +19,7 @@ public class Juego {
     public void setBaraja(ArrayList<Carta> baraja) {
         this.baraja = baraja;
     }
+
     public void iniciarJuego(){
         jugador.setMano(crearMano());
         System.out.println("Mano del jugador "+jugador.getNombre()+": "+ jugador.getMano());
@@ -174,6 +175,15 @@ public class Juego {
         else
             return false;
     }
+
+    //Septima Condicion
+    public boolean lastCarta(mano){
+        if(mano.size()==0){
+            return true;
+        }
+        return false;
+    }
+    
     @Override
     public String toString() {
         return "Linea de Juego: " + lineaDeJuego;
