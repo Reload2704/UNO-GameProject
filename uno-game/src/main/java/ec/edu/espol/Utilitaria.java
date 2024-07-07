@@ -50,42 +50,21 @@ public class Utilitaria {
 
     
     //Primera validación. (Recibe carta a jugar y ultima carta de linea de juego. Dice si tiene igual color o número)
-    public static boolean esIgualCyN(Carta cartaajugar, Carta ulCarta){
-        if(cartaajugar instanceof CartaNumerica){
-       if( cartaajugar.getColor().equals(ulCarta.getColor()) || cartaajugar.getNumero()==(ulCarta.getNumero())){
-        return true;
-       }
-       else
-       return false;
-    }
-       else
-       return false;
+    public static boolean esIgualCyN(CartaNumerica cartaajugar, Carta ulCarta){
+       return cartaajugar.getColor().equals(ulCarta.getColor()) || cartaajugar.getNumero()==(ulCarta.getNumero());
     }
 
     /*Segunda condición (Recibe carta jugar y ult carta linea de juego. 
     Dice si la carta comodin cambio de color tiene el mismo color que ult linea de juego)*/
 
-    public static boolean esCondicion2(Carta cartaajugar, Carta ulCarta){
-        if(cartaajugar instanceof CartaEspecial){
-            CartaEspecial playercarta=(CartaEspecial)cartaajugar;
-            if((playercarta.getColor()==ulCarta.getColor())&&(playercarta.getTipo()==TipoEspecial.CAMBIO_DE_COLOR)){
-                return true;
-            }
-            else
-                return false;
-        }
-        else
-            return false;
+    public static boolean esCondicion2(CartaEspecial cartaajugar, Carta ulCarta){
+            return (cartaajugar.getColor()==ulCarta.getColor())&&(cartaajugar.getTipo()==TipoEspecial.CAMBIO_DE_COLOR);
         }
     
     //Tercera condición(Recibe la carta a jugar y solo dice si es negro o no)
 
     public static boolean isNegro(Carta cartaajugar){
-        if(cartaajugar.getColor()==(Color.NEGRO)){
-            return true;
-        }
-        else
-        return false;
+        return cartaajugar.getColor()==(Color.NEGRO);
     }
 
     //Cuarta condición(recibe la ultimacarta de linea de juego o la carta de juego  e indica si es un +2 o +4)
@@ -105,17 +84,8 @@ public class Utilitaria {
     //Quinta condición(recibe la carta a jugar y la ultima carta de linea de juego)
     //indica sila carta a jugar es reversa o bloqueo y q solo será usada si el color
     //de la ultima carta coincide con la misma o si son del mismo tipo (e.g Bloqueo se responde con Bloqueo))
-    public static boolean isReverorBloq(Carta cartaajugar,Carta ulCarta){
-        if(cartaajugar instanceof CartaEspecial){
-            CartaEspecial playercarta=(CartaEspecial)cartaajugar;
-            if((playercarta.getTipo().equals(TipoEspecial.REVERSE) || playercarta.getTipo().equals(TipoEspecial.BLOQUEO))&&(ulCarta.getColor()==cartaajugar.getColor()||ulCartaescomodin(ulCarta, cartaajugar))){
-                return true;
-            }
-            else 
-                return false;
-        }
-        else
-            return false;
+    public static boolean isReverorBloq(CartaEspecial cartaajugar,Carta ulCarta){
+            return (cartaajugar.getTipo().equals(TipoEspecial.REVERSE) || cartaajugar.getTipo().equals(TipoEspecial.BLOQUEO))&&(ulCarta.getColor()==cartaajugar.getColor()||ulCartaescomodin(ulCarta, cartaajugar));
     }
 
     //Septima Condicion (Condicion para gritar UNOOO. Aun no implementada)
@@ -142,17 +112,9 @@ public class Utilitaria {
     }
 
     //ESta validadacion se usa para agregar a linea de juego cartas +2 y +4
-    //Primero se verifica si es especial, se le hace downcasting, comparamos si
-    //es un +2 o +4 Y SI TIENE EL MISMO COLOR QUE LA ULTIMA CARTA DE LINEA DE JUEGO
-    public static boolean iscomodincartajuego(Carta cartaajugar, Carta ulCarta){
-        if (cartaajugar instanceof CartaEspecial) {
-            CartaEspecial playercarta=(CartaEspecial)cartaajugar;
-            if((playercarta.getTipo()==TipoEspecial.MAS2||playercarta.getTipo()==TipoEspecial.MAS4)&& cartaajugar.getColor()==(ulCarta.getColor())){
-                return true;
-            }
-            return false;
-        }
-        return false;
+    //Comparamos si es un +2 o +4 Y SI TIENE EL MISMO COLOR QUE LA ULTIMA CARTA DE LINEA DE JUEGO
+    public static boolean iscomodincartajuego(CartaEspecial cartaajugar, Carta ulCarta){
+            return (cartaajugar.getTipo()==TipoEspecial.MAS2||cartaajugar.getTipo()==TipoEspecial.MAS4)&& cartaajugar.getColor()==(ulCarta.getColor());
     }
 
     //obtener color aleatorio (Para que la maquina opueda colocar un color random en caso de escoger cambio de color)

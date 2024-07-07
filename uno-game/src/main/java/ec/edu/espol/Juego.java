@@ -51,142 +51,141 @@ public class Juego {
                 Carta cartaajugar = jugador.getMano().get(position);
                 System.out.println(cartaajugar);
 
-                //Primera regla
-                if(Utilitaria.esIgualCyN(cartaajugar, ultcarta)){
-                    lineaDeJuego.add(cartaajugar);
-                    jugador.jugarCarta(position);
-                    turno=1;
-                    System.out.println("Validacion1");
-                }
-                
-
-           
-                //Segunda regla
-                else if(Utilitaria.esCondicion2(cartaajugar, ultcarta)){
-                    lineaDeJuego.add(cartaajugar);
-                    jugador.getMano().remove(cartaajugar);
-                    turno=1;
-                    System.out.println("prueba 2");
-                }
-
-                //Tercera regla
-                else if (Utilitaria.isNegro(cartaajugar)){
-                    System.out.println("¿Cuál será el color para el siguiente turno?");
-                    String colornew= sc.nextLine();
-                    lineaDeJuego.add(cartaajugar);
-                    jugador.jugarCarta(position);
-                    System.out.println(colornew);
-                    sc.close();
-                    turno=1;
-                }
-                //quinta regla
-
-                else if(Utilitaria.isReverorBloq(cartaajugar,ultcarta)){
-                    System.out.println("Validacion5");
-                    lineaDeJuego.add(cartaajugar);
-                    jugador.getMano().remove(cartaajugar);
-                    System.out.println("Vuelve a ser su turno");
-                }
-            
-                //Cuarta regla(SOLO PARA AGARRAR CARTA)
-                else if(Utilitaria.iscomodin(ultcarta)){ //se usa la validacion que indica si es +2 o +4 (true basta que solo 1 sea)
-                    System.out.println("Validacion4");
-                    CartaEspecial ct=(CartaEspecial)ultcarta;
-                    if(ct.getTipo()==TipoEspecial.MAS2) //si la carta es +2 agarra +2 cartas a su baraja
-                    for(int i = 0; i<2; i++){
-                        jugador.getMano().add(baraja.remove((baraja.size()-1)));
-                    }
-                else{
-                    for(int i = 0; i<4; i++){ //si no es +2, significa que es +4. entonces agarra 4 cartas
-                        jugador.getMano().add(baraja.remove((baraja.size()-1)));
-                    }
-
-                 }
-                 turno=1;
-                 }
-
-                 //Cuarta regla pt2. (PARA AGREGAR A LINEA DE JUEGO CARTAS +2 Y +4)
-                 else if(Utilitaria.iscomodincartajuego(cartaajugar,ultcarta)){
-                    lineaDeJuego.add(cartaajugar);
-                    jugador.getMano().remove(cartaajugar);
-                    turno=1;
-                    System.out.println("validacion agregar+2 y +4 /n");
-                 }
-
-            else 
-            System.out.println("Su carta no es valida, por favor repita");
-        
-        }
-
-        if(turno==1){
-
-            System.out.println("/n-----------------TURNO MAQUINA-----------------");
-
-            System.out.println("Mano maquina"+maquina.getMano());
-            System.out.println("Linea de juego"+lineaDeJuego);
-
-            //Sacamos la ultima carta de linea de juego
-            Carta ultcarta=lineaDeJuego.get(lineaDeJuego.size()-1);
-            System.out.println("Ultima carta"+ultcarta);
-                
-            //Dentro de un for ponemos las condiciones y en cuanto cambie por primera 
-            //vez la cartabandera a =1, se deja de realizar el for.
-
-            int i;
-            int banderacarta=0;
-            for(i=0; banderacarta==0 ;i++){
-                int posicion= i;
-                Carta cartaajugar=maquina.getMano().get(posicion);
-                System.out.println("Carta agarrada"+cartaajugar+"/n");
-                System.out.println(cartaajugar);
-
-                //Primera regla
-                if(Utilitaria.esIgualCyN(cartaajugar, ultcarta)){
-                    lineaDeJuego.add(cartaajugar);
-                    jugador.jugarCarta(posicion);
-                    turno=0;
-                    banderacarta=1;
-                    System.out.println("Validacion1.2");
-                }
+                if(cartaajugar instanceof CartaNumerica){
+                    CartaNumerica CNajugar = (CartaNumerica) cartaajugar;
                     
-               
-                //Segunda regla
-                else if(Utilitaria.esCondicion2(cartaajugar, ultcarta)){
-                    lineaDeJuego.add(cartaajugar);
-                    maquina.getMano().remove(cartaajugar);
-                    turno=0;
-                    banderacarta=1;
-                    System.out.println("prueba 2.2");
-                }
-    
-                //Tercera regla
-                else if (Utilitaria.isNegro(cartaajugar)){
-                    System.out.println("¿Cuál será el color para el siguiente turno?");
-                    Random rd = new Random();
-                    Color randomColor = Utilitaria.getRandomColor(rd);
-                    while(randomColor.equals(Color.NEGRO)){
-                        randomColor = Utilitaria.getRandomColor(rd);
+                    //Primera regla
+                    if(Utilitaria.esIgualCyN(CNajugar, ultcarta)){
+                        lineaDeJuego.add(CNajugar);
+                        jugador.jugarCarta(position);
+                        turno=1;
+                        System.out.println("Validacion1");
                     }
-                    System.out.println("Color aleatorio: " + randomColor);
-                    lineaDeJuego.add(cartaajugar);
-                    maquina.jugarCarta(posicion);
-    
-                    turno=0;
-                    banderacarta=1;
-                }
 
-                //quinta regla
-    
-                else if(Utilitaria.isReverorBloq(cartaajugar,ultcarta)){
-                    System.out.println("Validacion5");
+                } else {
+                    CartaEspecial CEajugar = (CartaEspecial) cartaajugar;
+                    
+                    //Segunda regla
+                    if(Utilitaria.esCondicion2(CEajugar, ultcarta)){
+                        lineaDeJuego.add(CEajugar);
+                        jugador.jugarCarta(position);
+                        turno=1;
+                        System.out.println("prueba 2");
+                    }
+
+                    //Tercera regla
+                    else if(Utilitaria.isNegro(CEajugar)){
+                        System.out.println("¿Cuál será el color para el siguiente turno?");
+                        String colornew= sc.nextLine();
+                        lineaDeJuego.add(CEajugar);
+                        jugador.jugarCarta(position);
+                        System.out.println(colornew);
+                        sc.close();
+                        turno=1;
+                    }
+
+                    //quinta regla
+                    else if(Utilitaria.isReverorBloq(CEajugar,ultcarta)){
+                        System.out.println("Validacion5");
+                        lineaDeJuego.add(cartaajugar);
+                        jugador.jugarCarta(position);
+                        System.out.println("Vuelve a ser su turno");
+                    }
+
+                    //Cuarta regla(SOLO PARA AGARRAR CARTA)
+                    else if(Utilitaria.iscomodin(ultcarta)){ //se usa la validacion que indica si es +2 o +4 (true basta que solo 1 sea)
+                        System.out.println("Validacion4");
+                        CartaEspecial ct=(CartaEspecial)ultcarta;
+                        if(ct.getTipo()==TipoEspecial.MAS2){ //si la carta es +2 agarra +2 cartas a su baraja
+                            for(int i = 0; i<2; i++){
+                                jugador.getMano().add(baraja.remove((baraja.size()-1)));
+                            }
+                        } else{
+                            for(int i = 0; i<4; i++){ //si no es +2, significa que es +4. entonces agarra 4 cartas
+                                jugador.getMano().add(baraja.remove((baraja.size()-1)));
+                            }
+                        }
+                        turno=1;
+                    }
+
+                    //Cuarta regla pt2. (PARA AGREGAR A LINEA DE JUEGO CARTAS +2 Y +4)
+                    else if(Utilitaria.iscomodincartajuego(CEajugar,ultcarta)){
+                       lineaDeJuego.add(CEajugar);
+                       jugador.jugarCarta(position);
+                       turno=1;
+                       System.out.println("validacion agregar+2 y +4 /n");
+                    } else
+                        System.out.println("Su carta no es valida, por favor repita");
+                }
+            } if(turno==1){
+                
+                System.out.println("/n-----------------TURNO MAQUINA-----------------");
+
+                System.out.println("Mano maquina"+maquina.getMano());
+                System.out.println("Linea de juego"+lineaDeJuego);
+
+                //Sacamos la ultima carta de linea de juego
+                Carta ultcarta=lineaDeJuego.get(lineaDeJuego.size()-1);
+                System.out.println("Ultima carta"+ultcarta);
+                    
+                //Dentro de un for ponemos las condiciones y en cuanto cambie por primera 
+                //vez la cartabandera a =1, se deja de realizar el for.
+
+                int i;
+                int banderacarta=0;
+                for(i=0; banderacarta==0 ;i++){
+                    int posicion= i;
+                    Carta cartaajugar=maquina.getMano().get(posicion);
+                    System.out.println("Carta agarrada"+cartaajugar+"/n");
+                    System.out.println(cartaajugar);
+
+                    //Primera regla
+                    if(Utilitaria.esIgualCyN(cartaajugar, ultcarta)){
+                        lineaDeJuego.add(cartaajugar);
+                        jugador.jugarCarta(posicion);
+                        turno=0;
+                        banderacarta=1;
+                        System.out.println("Validacion1.2");
+                    }
+                        
+                
+                    //Segunda regla
+                    else if(Utilitaria.esCondicion2(cartaajugar, ultcarta)){
                         lineaDeJuego.add(cartaajugar);
                         maquina.getMano().remove(cartaajugar);
-                        System.out.println("Vuelve a ser su turno maquina");
-                }
+                        turno=0;
+                        banderacarta=1;
+                        System.out.println("prueba 2.2");
+                    }
+        
+                    //Tercera regla
+                    else if (Utilitaria.isNegro(cartaajugar)){
+                        System.out.println("¿Cuál será el color para el siguiente turno?");
+                        Random rd = new Random();
+                        Color randomColor = Utilitaria.getRandomColor(rd);
+                        while(randomColor.equals(Color.NEGRO)){
+                            randomColor = Utilitaria.getRandomColor(rd);
+                        }
+                        System.out.println("Color aleatorio: " + randomColor);
+                        lineaDeJuego.add(cartaajugar);
+                        maquina.jugarCarta(posicion);
+        
+                        turno=0;
+                        banderacarta=1;
+                    }
 
-                
-            } //cierre for
-        } //cierre turno 1
+                    //quinta regla
+        
+                    else if(Utilitaria.isReverorBloq(cartaajugar,ultcarta)){
+                        System.out.println("Validacion5");
+                            lineaDeJuego.add(cartaajugar);
+                            maquina.getMano().remove(cartaajugar);
+                            System.out.println("Vuelve a ser su turno maquina");
+                    }
+
+                    
+                } //cierre for
+            } //cierre turno 1
         } //cierre while
 
         if (jugador.getMano().isEmpty()){

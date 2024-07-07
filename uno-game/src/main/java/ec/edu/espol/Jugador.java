@@ -9,14 +9,25 @@ public class Jugador {
         this.nombre = nombre;
     }
     
-    public Carta jugarCarta(int indice){
-        Carta newcarta = mano.remove(indice);
-        return newcarta;
+    public void jugarCarta(int indice){
+        mano.remove(indice);
     }
     public void anadirCarta(Carta carta){
         mano.add(carta);
     }
-
+    public Carta validarCartaMaquina(Carta ultCard){
+        for(Carta c : mano){
+            if(c instanceof CartaNumerica){
+                CartaNumerica cn = (CartaNumerica) c;
+                if(Utilitaria.esIgualCyN(cn, ultCard)){
+                    return cn;
+                }
+            } else {
+                CartaEspecial ce = (CartaEspecial) c;
+            }
+        }
+        return null;
+    }
     //Getters 
     public String getNombre() {
         return nombre;
