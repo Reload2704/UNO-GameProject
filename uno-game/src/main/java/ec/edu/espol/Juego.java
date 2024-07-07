@@ -33,6 +33,8 @@ public class Juego {
             /*Aqui va la lógica completa del juego.
              * El bucle acaba cuando la mano de uno de los jugadores queda vacia.
             */
+            System.out.println(jugador.getMano());
+            System.out.println(lineaDeJuego);
             Carta ultcarta=lineaDeJuego.get(lineaDeJuego.size()-1);
             System.out.println(ultcarta);
             Scanner sc = new Scanner (System.in);
@@ -55,15 +57,25 @@ public class Juego {
             else if (cartaajugar.getColor()==(Color.NEGRO)){
                 System.out.println("¿Cuál será el color para el siguiente turno?");
                 String colornew= sc.nextLine();
-                sc.nextLine();
+                lineaDeJuego.add(cartaajugar);
+                jugador.jugarCarta(position);
                 System.err.println(colornew);
             }
             //Segunda regla
             else if(cartaajugar instanceof CartaEspecial){
-                if(cartaajugar.getColor()==(ultcarta.getColor())){
+                CartaEspecial playercarta=(CartaEspecial)cartaajugar;
+                if((cartaajugar.getColor()==(ultcarta.getColor())) || (!(playercarta.getTipo().equals(TipoEspecial.REVERSE) || playercarta.getTipo().equals(TipoEspecial.BLOQUEO)))){
                     lineaDeJuego.add(cartaajugar);
                     jugador.getMano().remove(cartaajugar);
                     System.out.println("prueba 2");
+                }
+
+                //quinta regla
+
+                if(playercarta.getTipo().equals(TipoEspecial.REVERSE) || playercarta.getTipo().equals(TipoEspecial.BLOQUEO)){
+                    lineaDeJuego.add(cartaajugar);
+                    jugador.getMano().remove(cartaajugar);
+                    System.out.println("Vuelve a ser su turno");
                 }
             }
             //Cuarta regla
@@ -75,11 +87,13 @@ public class Juego {
                     for(int i = 0; i<4; i++){
                         jugador.getMano().add(baraja.remove(rd.nextInt(baraja.size())));
                 }
+
             }
 
-            System.out.println(jugador.getMano());
-            System.out.println(lineaDeJuego);
+            else 
+            System.out.println("Su carta no es valida, por favor repita");
         }
+
     }
 
         if (jugador.getMano().isEmpty()){
