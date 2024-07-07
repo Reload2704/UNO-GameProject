@@ -144,7 +144,7 @@ public class Juego {
     
     //Tercera condición
 
-    public boolean esNegro(Carta cartaajugar){
+    public boolean isNegro(Carta cartaajugar){
         if(cartaajugar.getColor()==(Color.NEGRO)){
             return true;
         }
@@ -152,6 +152,17 @@ public class Juego {
         return false;
     }
 
+    //Cuarta condición
+    public boolean iscomodin(Carta ulCarta){
+        if(ulCarta instanceof CartaEspecial){
+        CartaEspecial ct=(CartaEspecial)ulCarta;
+            if(ct.getTipo()==(TipoEspecial.MAS2) || ct.getTipo()==(TipoEspecial.MAS4)){
+                return true;
+        }
+    }
+    else
+        return false;
+    }
     
     @Override
     public String toString() {
