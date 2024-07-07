@@ -62,10 +62,12 @@ public class Juego {
             }
             //Cuarta regla
             if(ultcarta instanceof CartaEspecial){
+                Random rd = new Random();
                 CartaEspecial ct=(CartaEspecial)ultcarta;
                 if(ct.getTipo().equals("MAS2") || ct.getTipo().equals("MAS4")){
                     if(turno==0)
-                    jugador.getMano().add()
+                    for(int i = 0; i<4; i++){
+                        jugador.getMano().add(baraja.remove(rd.nextInt(baraja.size())));
                 }
             }
 
@@ -84,7 +86,7 @@ public class Juego {
          * Habria que crear un metodo en Juego que devuelva una lista de cartas ArrayList<Carta> robarCartas()
          * Los dos metodos anteriores serviran al momento de usar un +2 o +4
         */
-    }
+    }}
     public ArrayList<Carta> crearMano(){
         Random rd = new Random();
         ArrayList<Carta> manoJug = new ArrayList<>();
