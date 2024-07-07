@@ -163,7 +163,17 @@ public class Juego {
     else
         return false;
     }
-    
+    //Quinta condición
+    public boolean isReverorBloq(Carta cartaajugar){
+        if(cartaajugar instanceof CartaEspecial){
+            CartaEspecial playercarta=(CartaEspecial)cartaajugar;
+            if(playercarta.getTipo().equals(TipoEspecial.REVERSE) || playercarta.getTipo().equals(TipoEspecial.BLOQUEO)){
+                return true;
+            }
+        }
+        else
+            return false;
+    }
     @Override
     public String toString() {
         return "Linea de Juego: " + lineaDeJuego;
