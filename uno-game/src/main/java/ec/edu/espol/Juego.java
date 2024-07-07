@@ -28,43 +28,43 @@ public class Juego {
         System.out.println("\n"+this);
 
         //Se refieren al turno maquina (-1) y turno jugador (1)
-        int turno=1;
+        int turno=0;
 
         while (!jugador.getMano().isEmpty() || !maquina.getMano().isEmpty()) {
             /*Aqui va la lógica completa del juego.
              * El bucle acaba cuando la mano de uno de los jugadores queda vacia.
             */
-            System.out.println(jugador.getMano());
-            System.out.println(lineaDeJuego);
-
-            Carta ultcarta=lineaDeJuego.get(lineaDeJuego.size()-1);
-            System.out.println(ultcarta);
-
-            Scanner sc = new Scanner (System.in);
-
             if(turno==0){
+                System.out.println(jugador.getMano());
+                System.out.println(lineaDeJuego);
+    
+                Carta ultcarta=lineaDeJuego.get(lineaDeJuego.size()-1);
+                System.out.println(ultcarta);
+    
+                Scanner sc = new Scanner (System.in);
+
             System.out.println("¿Cuál es su carta a jugar? (Indique la posición)");
             int position= sc.nextInt()-1;
             sc.nextLine();
 
-            Carta cartaajugar = jugador.getMano().remove(position);
+            Carta cartaajugar = jugador.getMano().get(position);
             System.out.println(cartaajugar);
 
             //Primera regla
-            if (cartaajugar instanceof CartaNumerica){
-            if(esIgualCyN(cartaajugar, ultcarta)){
-                lineaDeJuego.add(cartaajugar);
-                jugador.jugarCarta(position);
-                turno=1;
-            }
-            }
+                if(esIgualCyN(cartaajugar, ultcarta)){
+                    lineaDeJuego.add(cartaajugar);
+                    jugador.jugarCarta(position);
+                    turno=1;
+                    System.out.println("Validacion1");
+                }
+                
 
            
             //Segunda regla
             else if(esCondicion2(cartaajugar, ultcarta)){
                     lineaDeJuego.add(cartaajugar);
                     jugador.getMano().remove(cartaajugar);
-                    turno=turno*-1;
+                    turno=1;
                     System.out.println("prueba 2");
              }
 
@@ -76,17 +76,20 @@ public class Juego {
                 jugador.jugarCarta(position);
                 System.out.println(colornew);
                 sc.close();
+                turno=1;
             }
             //quinta regla
 
-            if(isReverorBloq(cartaajugar)){
+            else if(isReverorBloq(cartaajugar,ultcarta)){
+                System.out.println("Validacion5");
                     lineaDeJuego.add(cartaajugar);
                     jugador.getMano().remove(cartaajugar);
                     System.out.println("Vuelve a ser su turno");
             }
             
             //Cuarta regla
-            if(iscomodin(ultcarta)){
+            else if(iscomodin(ultcarta)){
+                System.out.println("Validacion4");
                 Random rd = new Random();
                 CartaEspecial ct=(CartaEspecial)ultcarta;
                 if(ct.getTipo()==TipoEspecial.MAS2)
@@ -99,11 +102,66 @@ public class Juego {
                     }
 
                  }
+                 turno=1;
             }
 
             else 
             System.out.println("Su carta no es valida, por favor repita");
         
+        }
+        if(turno==1){
+            System.out.println(maquina.getMano());
+                System.out.println(lineaDeJuego);
+    
+                Carta ultcarta=lineaDeJuego.get(lineaDeJuego.size()-1);
+                System.out.println(ultcarta);
+                
+            int i;
+            for(i=0; i< maquina.getMano().size() ;i++);
+            int posicion= i;
+            Carta cartaajugar=jugador.getMano().get(posicion);
+            
+            System.out.println(cartaajugar);
+                    //Primera regla
+                    if(esIgualCyN(cartaajugar, ultcarta)){
+                        lineaDeJuego.add(cartaajugar);
+                        jugador.jugarCarta(posicion);
+                        turno=0;
+                        System.out.println("Validacion1.2");
+                    }
+                    
+               
+                //Segunda regla
+                else if(esCondicion2(cartaajugar, ultcarta)){
+                        lineaDeJuego.add(cartaajugar);
+                        maquina.getMano().remove(cartaajugar);
+                        turno=0;
+                        System.out.println("prueba 2");
+                 }
+    
+                //Tercera regla
+                else if (isNegro(cartaajugar)){
+                    System.out.println("¿Cuál será el color para el siguiente turno?");
+                    Random rd = new Random();
+                    Color randomColor = getRandomColor(rd);
+                    while(randomColor.equals(Color.NEGRO)){
+                        randomColor = getRandomColor(rd);
+                    }
+                    System.out.println("Color aleatorio: " + randomColor);
+                    lineaDeJuego.add(cartaajugar);
+                    maquina.jugarCarta(posicion);
+    
+                    turno=0;
+                }
+                //quinta regla
+    
+                else if(isReverorBloq(cartaajugar,ultcarta)){
+                    System.out.println("Validacion5");
+                        lineaDeJuego.add(cartaajugar);
+                        maquina.getMano().remove(cartaajugar);
+                        System.out.println("Vuelve a ser su turno maquina");
+                }
+                
         }
         } 
     
@@ -135,9 +193,13 @@ public class Juego {
 
     //Primera validación
     public boolean esIgualCyN(Carta cartaajugar, Carta ulCarta){
-       if( cartaajugar.getColor().equals(ulCarta.getColor()) || cartaajugar.getNumero().equals(ulCarta.getNumero())){
+        if(cartaajugar instanceof CartaNumerica){
+       if( cartaajugar.getColor().equals(ulCarta.getColor()) || cartaajugar.getNumero()==(ulCarta.getNumero())){
         return true;
        }
+       else
+       return false;
+    }
        else
        return false;
     }
@@ -145,7 +207,7 @@ public class Juego {
     public boolean esCondicion2(Carta cartaajugar, Carta ulCarta){
         if(cartaajugar instanceof CartaEspecial){
             CartaEspecial playercarta=(CartaEspecial)cartaajugar;
-            if(cartaajugar.getColor()==(ulCarta.getColor())){
+            if((playercarta.getColor()==ulCarta.getColor())&&(playercarta.getTipo()==TipoEspecial.CAMBIO_DE_COLOR)){
                 return true;
             }
             else
@@ -179,10 +241,10 @@ public class Juego {
         return false;
     }
     //Quinta condición
-    public boolean isReverorBloq(Carta cartaajugar){
+    public boolean isReverorBloq(Carta cartaajugar,Carta ulCarta){
         if(cartaajugar instanceof CartaEspecial){
             CartaEspecial playercarta=(CartaEspecial)cartaajugar;
-            if(playercarta.getTipo().equals(TipoEspecial.REVERSE) || playercarta.getTipo().equals(TipoEspecial.BLOQUEO)){
+            if((playercarta.getTipo().equals(TipoEspecial.REVERSE) || playercarta.getTipo().equals(TipoEspecial.BLOQUEO))&&(ulCarta.getColor()==cartaajugar.getColor()||ulCartaescomodin(ulCarta, cartaajugar))){
                 return true;
             }
             else 
@@ -200,6 +262,25 @@ public class Juego {
         return false;
     }
 
+    //es ultcarta comodin?
+    public boolean ulCartaescomodin(Carta ulCarta, Carta cartaajugar){
+        if(ulCarta instanceof CartaEspecial && cartaajugar instanceof CartaEspecial){
+            CartaEspecial ct=(CartaEspecial)ulCarta;
+            CartaEspecial playercarta=(CartaEspecial)cartaajugar;
+            if(ct.getTipo()==playercarta.getTipo()){
+                return true;
+            }
+            return false;
+        }
+        return false;
+    }
+
+    //obtener color aleatorio
+    public static Color getRandomColor(Random rd) {
+        Color[] colors = Color.values();
+        int randomIndex = rd.nextInt(colors.length);
+        return colors[randomIndex];
+        }
     @Override
     public String toString() {
         return "Linea de Juego: " + lineaDeJuego;
