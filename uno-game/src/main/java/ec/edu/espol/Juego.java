@@ -1,4 +1,5 @@
 package ec.edu.espol;
+import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -25,10 +26,43 @@ public class Juego {
         System.out.println("Mano del jugador "+maquina.getNombre()+": "+ maquina.getMano());
         System.out.println("\n"+this);
 
-        while (jugador.getMano().isEmpty() || maquina.getMano().isEmpty()) {
+        //Se refieren al turno maquina (1) y turno jugador (0)
+        int turno=0;
+
+        while (!jugador.getMano().isEmpty() || !maquina.getMano().isEmpty()) {
             /*Aqui va la lógica completa del juego.
              * El bucle acaba cuando la mano de uno de los jugadores queda vacia.
             */
+            Carta ultcarta=lineaDeJuego.get(lineaDeJuego.size()-1);
+            System.out.println(ultcarta);
+            Scanner sc = new Scanner (System.in);
+            System.out.println("¿Cuál es su carta a jugar? (Indique la posición)");
+            int position= sc.nextInt()-1;
+            Carta cartaajugar=jugador.getMano().get(position);
+            System.out.println(cartaajugar);
+            //Primera regla
+            if(cartaajugar.getColor().equals(ultcarta.getColor()) || cartaajugar.getNumero().equals(ultcarta.getNumero())){
+                lineaDeJuego.add(cartaajugar);
+                jugador.getMano().remove(cartaajugar);
+                System.out.println("1");
+                turno=1;
+            }
+            //Segunda regla
+            else if(cartaajugar instanceof CartaEspecial){
+                if(cartaajugar.getColor().equals(ultcarta.getColor())){
+                    lineaDeJuego.add(cartaajugar);
+                    jugador.getMano().remove(cartaajugar);
+                    System.out.println("2");
+                }
+                //Tercera regla
+                else if (cartaajugar.getColor().equals("NEGRO")){
+                    System.out.println("¿Cuál será el color para el siguiente turno?");
+                    String colornew= sc.nextLine();
+                }
+
+            }
+            System.out.println(jugador.getMano());
+            System.out.println(lineaDeJuego);
         }
         if (jugador.getMano().isEmpty()){
             System.out.println("Felicidades, has ganado!");
@@ -54,6 +88,8 @@ public class Juego {
     public Carta robarCarta(){
         return baraja.remove(baraja.size()-1);
     }
+
+
     @Override
     public String toString() {
         return "Linea de Juego: " + lineaDeJuego;
