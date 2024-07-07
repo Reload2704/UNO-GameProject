@@ -38,6 +38,7 @@ public class Juego {
             Scanner sc = new Scanner (System.in);
             System.out.println("¿Cuál es su carta a jugar? (Indique la posición)");
             int position= sc.nextInt()-1;
+            sc.nextLine();
             Carta cartaajugar=jugador.getMano().get(position);
             System.out.println(cartaajugar);
 
@@ -54,6 +55,7 @@ public class Juego {
             else if (cartaajugar.getColor()==(Color.NEGRO)){
                 System.out.println("¿Cuál será el color para el siguiente turno?");
                 String colornew= sc.nextLine();
+                sc.nextLine();
                 System.err.println(colornew);
             }
             //Segunda regla
