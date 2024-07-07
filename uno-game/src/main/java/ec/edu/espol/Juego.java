@@ -36,14 +36,18 @@ public class Juego {
             */
             System.out.println(jugador.getMano());
             System.out.println(lineaDeJuego);
+
             Carta ultcarta=lineaDeJuego.get(lineaDeJuego.size()-1);
             System.out.println(ultcarta);
+
             Scanner sc = new Scanner (System.in);
+
+            if(turno==0){
             System.out.println("¿Cuál es su carta a jugar? (Indique la posición)");
             int position= sc.nextInt()-1;
             sc.nextLine();
+
             Carta cartaajugar = jugador.getMano().remove(position);
-            
             System.out.println(cartaajugar);
 
             //Primera regla
@@ -51,66 +55,72 @@ public class Juego {
             if(esIgualCyN(cartaajugar, ultcarta)){
                 lineaDeJuego.add(cartaajugar);
                 jugador.jugarCarta(position);
-                turno=turno*-1;
+                turno=1;
             }
             }
 
-            //Tercera regla
-            else if (cartaajugar.getColor()==(Color.NEGRO)){
-                System.out.println("¿Cuál será el color para el siguiente turno?");
-                String colornew= sc.nextLine();
-                lineaDeJuego.add(cartaajugar);
-                jugador.jugarCarta(position);
-                System.err.println(colornew);
-            }
+           
             //Segunda regla
-            else if
+            else if(esCondicion2(cartaajugar, ultcarta)){
                     lineaDeJuego.add(cartaajugar);
                     jugador.getMano().remove(cartaajugar);
                     turno=turno*-1;
                     System.out.println("prueba 2");
-                    
-                }
+             }
 
-                //quinta regla
+            //Tercera regla
+            else if (isNegro(cartaajugar)){
+                System.out.println("¿Cuál será el color para el siguiente turno?");
+                String colornew= sc.nextLine();
+                lineaDeJuego.add(cartaajugar);
+                jugador.jugarCarta(position);
+                System.out.println(colornew);
+                sc.close();
+            }
+            //quinta regla
 
-                if(playercarta.getTipo().equals(TipoEspecial.REVERSE) || playercarta.getTipo().equals(TipoEspecial.BLOQUEO)){
+            if(isReverorBloq(cartaajugar)){
                     lineaDeJuego.add(cartaajugar);
                     jugador.getMano().remove(cartaajugar);
                     System.out.println("Vuelve a ser su turno");
-                }
             }
+            
             //Cuarta regla
-            if(ultcarta instanceof CartaEspecial){
+            if(iscomodin(ultcarta)){
                 Random rd = new Random();
                 CartaEspecial ct=(CartaEspecial)ultcarta;
-                if(ct.getTipo()==(TipoEspecial.MAS2) || ct.getTipo()==(TipoEspecial.MAS4)){
-                    if(turno==0)
-                    for(int i = 0; i<4; i++){
+                if(ct.getTipo()==TipoEspecial.MAS2)
+                    for(int i = 0; i<2; i++){
                         jugador.getMano().add(baraja.remove(rd.nextInt(baraja.size())));
                 }
+                else{
+                    for(int i = 0; i<4; i++){
+                        jugador.getMano().add(baraja.remove(rd.nextInt(baraja.size())));
+                    }
 
+                 }
             }
 
             else 
             System.out.println("Su carta no es valida, por favor repita");
+        
         }
-
-    }
-
+        } 
+    
         if (jugador.getMano().isEmpty()){
             System.out.println("Felicidades, has ganado!");
         } else{
             System.out.println("Mala suerte, has perdido!");
         }
-
+    }
         /* ------------- Notas -------------
          * Para robar carta seria: jugador.anadirCarta(robarCarta()) y maquina.anadirCarta(robarCarta());
          * Habria que crear un metodo en Jugador que permita agregar listas de cartas (anadirCartas(ArrayList<Carta> cartas))
          * Habria que crear un metodo en Juego que devuelva una lista de cartas ArrayList<Carta> robarCartas()
          * Los dos metodos anteriores serviran al momento de usar un +2 o +4
         */
-    }
+
+
     public ArrayList<Carta> crearMano(){
         Random rd = new Random();
         ArrayList<Carta> manoJug = new ArrayList<>();
@@ -138,6 +148,8 @@ public class Juego {
             if(cartaajugar.getColor()==(ulCarta.getColor())){
                 return true;
             }
+            else
+                return false;
         }
         else
             return false;
@@ -159,8 +171,10 @@ public class Juego {
         CartaEspecial ct=(CartaEspecial)ulCarta;
             if(ct.getTipo()==(TipoEspecial.MAS2) || ct.getTipo()==(TipoEspecial.MAS4)){
                 return true;
+             }
+        else
+             return false;
         }
-    }
     else
         return false;
     }
@@ -171,19 +185,21 @@ public class Juego {
             if(playercarta.getTipo().equals(TipoEspecial.REVERSE) || playercarta.getTipo().equals(TipoEspecial.BLOQUEO)){
                 return true;
             }
+            else 
+                return false;
         }
         else
             return false;
     }
 
     //Septima Condicion
-    public boolean lastCarta(mano){
+    public boolean lastCarta(ArrayList<Carta> mano){
         if(mano.size()==0){
             return true;
         }
         return false;
     }
-    
+
     @Override
     public String toString() {
         return "Linea de Juego: " + lineaDeJuego;
