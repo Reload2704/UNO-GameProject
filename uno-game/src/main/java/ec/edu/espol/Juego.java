@@ -55,7 +55,6 @@ public class Juego {
                     System.out.println("2");
                 }
                 //Tercera regla
-                else if (cartaajugar.getColor().equals(Color.NEGRO)){
                     System.out.println("¿Cuál será el color para el siguiente turno?");
                     String colornew= sc.nextLine();
                 }
@@ -64,7 +63,6 @@ public class Juego {
             if(ultcarta instanceof CartaEspecial){
                 Random rd = new Random();
                 CartaEspecial ct=(CartaEspecial)ultcarta;
-                if(ct.getTipo().equals(TipoEspecial.MAS2) || ct.getTipo().equals(TipoEspecial.MAS4)){
                     if(turno==0)
                     for(int i = 0; i<4; i++){
                         jugador.getMano().add(baraja.remove(rd.nextInt(baraja.size())));
