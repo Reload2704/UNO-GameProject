@@ -47,7 +47,7 @@ public class Juego {
 
             //Primera regla
             if (cartaajugar instanceof CartaNumerica){
-            if(cartaajugar.getColor().equals(ultcarta.getColor()) || cartaajugar.getNumero().equals(ultcarta.getNumero())){
+            if(){
                 lineaDeJuego.add(cartaajugar);
                 jugador.jugarCarta(position);
                 turno=turno*-1;
@@ -124,6 +124,14 @@ public class Juego {
         return baraja.remove(baraja.size()-1);
     }
 
+    //Primera validación
+    public boolean esIgualCyN(Carta cartaajugar, Carta ulCarta){
+       if( cartaajugar.getColor().equals(ulCarta.getColor()) || cartaajugar.getNumero().equals(ulCarta.getNumero())){
+        return true;
+       }
+       else
+       return false;
+    }
 
     @Override
     public String toString() {
