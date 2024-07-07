@@ -41,15 +41,7 @@ public class Juego {
             System.out.println("¿Cuál es su carta a jugar? (Indique la posición)");
             int position= sc.nextInt()-1;
             sc.nextLine();
-            Carta cartaajugar;
-            if (turno==1) {
-                cartaajugar=jugador.getMano().get(position);   
-            }
-            else if (turno ==0){
-                for(Carta carta:maquina.getMano()){
-                cartaajugar=maquina.getMano().get(position);
-                }
-            }
+            Carta cartaajugar = jugador.getMano().remove(position);
             
             System.out.println(cartaajugar);
 
