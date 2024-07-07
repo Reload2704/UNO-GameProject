@@ -30,13 +30,13 @@ public abstract class Carta {
     public CartaEspecial getEspecial() {
         return especial;
     }
+    public void setColor(Color color) {
+        this.color = color;
+    }
 
     @Override
     public String toString() {
         return "Carta [color=" + color + ", numero=" + numero + ", especial=" + especial + "]";
     }
 
-    public void setColor(Color color) {
-        this.color = color;
-    }
 }
