@@ -35,11 +35,12 @@ public class Juego {
              * El bucle acaba cuando la mano de uno de los jugadores queda vacia.
             */
             if(turno==0){
+                System.out.println("/n-----------------TURNO JUGADOR-----------------");
                 System.out.println(jugador.getMano());
-                System.out.println(lineaDeJuego);
+                System.out.println("Linea de Juego: "+lineaDeJuego);
     
                 Carta ultcarta=lineaDeJuego.get(lineaDeJuego.size()-1);
-                System.out.println(ultcarta);
+                System.out.println("Ultima Carta: "+ultcarta);
     
                 Scanner sc = new Scanner (System.in);
 
@@ -90,15 +91,14 @@ public class Juego {
                 //Cuarta regla(SOLO PARA AGARRAR CARTA)
                 else if(iscomodin(ultcarta)){ //se usa la validacion que indica si es +2 o +4 (true basta que solo 1 sea)
                     System.out.println("Validacion4");
-                    Random rd = new Random();
                     CartaEspecial ct=(CartaEspecial)ultcarta;
                     if(ct.getTipo()==TipoEspecial.MAS2) //si la carta es +2 agarra +2 cartas a su baraja
                     for(int i = 0; i<2; i++){
-                        jugador.getMano().add(baraja.remove(rd.nextInt(baraja.size())));
+                        jugador.getMano().add(baraja.remove((baraja.size()-1)));
                     }
                 else{
                     for(int i = 0; i<4; i++){ //si no es +2, significa que es +4. entonces agarra 4 cartas
-                        jugador.getMano().add(baraja.remove(rd.nextInt(baraja.size())));
+                        jugador.getMano().add(baraja.remove((baraja.size()-1)));
                     }
 
                  }
@@ -119,6 +119,8 @@ public class Juego {
         }
 
         if(turno==1){
+
+            System.out.println("/n-----------------TURNO MAQUINA-----------------");
 
             System.out.println("Mano maquina"+maquina.getMano());
             System.out.println("Linea de juego"+lineaDeJuego);
