@@ -140,7 +140,9 @@ public class Juego {
                     lineaDeJuego.add(cartaajugar);
                     turno = 0;
                 } else {
-                    robarCarta();
+                    maquina.anadirCarta(robarCarta());
+                    System.out.println("La maquina ha robado una carta!");
+                    turno = 0;
                 }
 
 
