@@ -40,12 +40,21 @@ public class Juego {
             int position= sc.nextInt()-1;
             Carta cartaajugar=jugador.getMano().get(position);
             System.out.println(cartaajugar);
+
             //Primera regla
-            if(cartaajugar.getColor()==(ultcarta.getColor()) || cartaajugar.getNumero()==ultcarta.getNumero()){
+            if (cartaajugar instanceof CartaNumerica){
+            if(cartaajugar.getColor().equals(ultcarta.getColor()) || cartaajugar.getNumero().equals(ultcarta.getNumero())){
                 lineaDeJuego.add(cartaajugar);
                 jugador.jugarCarta(position);
-                System.out.println("1");
                 turno=1;
+            }
+            }
+
+            //Tercera regla
+            else if (cartaajugar.getColor()==(Color.NEGRO)){
+                System.out.println("¿Cuál será el color para el siguiente turno?");
+                String colornew= sc.nextLine();
+                System.err.println(colornew);
             }
             //Segunda regla
             else if(cartaajugar instanceof CartaEspecial){
@@ -53,11 +62,6 @@ public class Juego {
                     lineaDeJuego.add(cartaajugar);
                     jugador.getMano().remove(cartaajugar);
                     System.out.println("prueba 2");
-                }
-                //Tercera regla
-                else if (cartaajugar.getColor()==(Color.NEGRO)){
-                    System.out.println("¿Cuál será el color para el siguiente turno?");
-                    String colornew= sc.nextLine();
                 }
             }
             //Cuarta regla
@@ -74,6 +78,8 @@ public class Juego {
             System.out.println(jugador.getMano());
             System.out.println(lineaDeJuego);
         }
+    }
+
         if (jugador.getMano().isEmpty()){
             System.out.println("Felicidades, has ganado!");
         } else{
@@ -86,7 +92,7 @@ public class Juego {
          * Habria que crear un metodo en Juego que devuelva una lista de cartas ArrayList<Carta> robarCartas()
          * Los dos metodos anteriores serviran al momento de usar un +2 o +4
         */
-    }}
+    }
     public ArrayList<Carta> crearMano(){
         Random rd = new Random();
         ArrayList<Carta> manoJug = new ArrayList<>();
