@@ -51,7 +51,12 @@ public class Utilitaria {
     
     //Primera validación. (Recibe carta a jugar y ultima carta de linea de juego. Dice si tiene igual color o número)
     public static boolean esIgualCyN(CartaNumerica cartaajugar, Carta ulCarta){
-       return cartaajugar.getColor().equals(ulCarta.getColor()) || cartaajugar.getNumero()==(ulCarta.getNumero());
+        if(ulCarta instanceof CartaNumerica){
+            CartaNumerica cartlok=(CartaNumerica)ulCarta;
+            return  cartaajugar.getColor().equals(ulCarta.getColor()) || cartlok.getValor()==(cartaajugar.getValor());
+        }
+        else
+            return cartaajugar.getColor().equals(ulCarta.getColor());
     }
 
     /*Segunda condición (Recibe carta jugar y ult carta linea de juego. 
