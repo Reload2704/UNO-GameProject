@@ -50,7 +50,11 @@ public class Juego {
                     }
                 }
                     System.out.println("Se puede jugar?"+yes);
-
+                if(yes==false){
+                    jugador.anadirCarta(robarCarta());
+                    turno=1;
+                }
+                else{
                 System.out.println("¿Cuál es su carta a jugar? (Indique la posición)");
                 int position= sc.nextInt()-1;
                 sc.nextLine();
@@ -128,6 +132,7 @@ public class Juego {
                     } else
                         System.out.println("Su carta no es valida, por favor repita");
                 }
+            }
             } if(turno==1){
                 
                 System.out.println("\n-----------------TURNO MAQUINA-----------------");
