@@ -35,7 +35,7 @@ public class Juego {
              * El bucle acaba cuando la mano de uno de los jugadores queda vacia.
             */
             if(turno==0){
-                System.out.println("/n-----------------TURNO JUGADOR-----------------");
+                System.out.println("\n-----------------TURNO JUGADOR-----------------");
                 System.out.println(jugador.getMano());
                 System.out.println("Linea de Juego: "+lineaDeJuego);
     
@@ -119,18 +119,31 @@ public class Juego {
                 }
             } if(turno==1){
                 
-                System.out.println("/n-----------------TURNO MAQUINA-----------------");
-
-                System.out.println("Mano maquina"+maquina.getMano());
-                System.out.println("Linea de juego"+lineaDeJuego);
+                System.out.println("\n-----------------TURNO MAQUINA-----------------");
+                System.out.println("\nMano maquina: "+maquina.getMano());
+                System.out.println("Linea de juego: "+lineaDeJuego);
 
                 //Sacamos la ultima carta de linea de juego
                 Carta ultcarta=lineaDeJuego.get(lineaDeJuego.size()-1);
-                System.out.println("Ultima carta"+ultcarta);
-                    
+                System.out.println("Ultima carta: "+ultcarta);
+                
+                //Seleccion de carta por maquina
+                Carta cartaajugar = maquina.validarCartaMaquina(ultcarta);
+                
+                //Validacion de si la carta es null, roba una carta automaticamente
+                if(cartaajugar != null){
+                    System.out.println("Carta jugada: "+cartaajugar);
+                    lineaDeJuego.add(cartaajugar);
+                    turno = 0;
+                } else {
+                    robarCarta();
+                }
+
+
                 //Dentro de un for ponemos las condiciones y en cuanto cambie por primera 
                 //vez la cartabandera a =1, se deja de realizar el for.
 
+                /*
                 int i;
                 int banderacarta=0;
                 for(i=0; banderacarta==0 ;i++){
@@ -184,7 +197,7 @@ public class Juego {
                     }
 
                     
-                } //cierre for
+                } //cierre for*/
             } //cierre turno 1
         } //cierre while
 
