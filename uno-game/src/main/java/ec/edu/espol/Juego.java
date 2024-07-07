@@ -43,14 +43,14 @@ public class Juego {
     
                 Scanner sc = new Scanner (System.in);
 
-            System.out.println("¿Cuál es su carta a jugar? (Indique la posición)");
-            int position= sc.nextInt()-1;
-            sc.nextLine();
+                System.out.println("¿Cuál es su carta a jugar? (Indique la posición)");
+                int position= sc.nextInt()-1;
+                sc.nextLine();
 
-            Carta cartaajugar = jugador.getMano().get(position);
-            System.out.println(cartaajugar);
+                Carta cartaajugar = jugador.getMano().get(position);
+                System.out.println(cartaajugar);
 
-            //Primera regla
+                //Primera regla
                 if(esIgualCyN(cartaajugar, ultcarta)){
                     lineaDeJuego.add(cartaajugar);
                     jugador.jugarCarta(position);
@@ -60,42 +60,42 @@ public class Juego {
                 
 
            
-            //Segunda regla
-            else if(esCondicion2(cartaajugar, ultcarta)){
+                //Segunda regla
+                else if(esCondicion2(cartaajugar, ultcarta)){
                     lineaDeJuego.add(cartaajugar);
                     jugador.getMano().remove(cartaajugar);
                     turno=1;
                     System.out.println("prueba 2");
-             }
+                }
 
-            //Tercera regla
-            else if (isNegro(cartaajugar)){
-                System.out.println("¿Cuál será el color para el siguiente turno?");
-                String colornew= sc.nextLine();
-                lineaDeJuego.add(cartaajugar);
-                jugador.jugarCarta(position);
-                System.out.println(colornew);
-                sc.close();
-                turno=1;
-            }
-            //quinta regla
+                //Tercera regla
+                else if (isNegro(cartaajugar)){
+                    System.out.println("¿Cuál será el color para el siguiente turno?");
+                    String colornew= sc.nextLine();
+                    lineaDeJuego.add(cartaajugar);
+                    jugador.jugarCarta(position);
+                    System.out.println(colornew);
+                    sc.close();
+                    turno=1;
+                }
+                //quinta regla
 
-            else if(isReverorBloq(cartaajugar,ultcarta)){
-                System.out.println("Validacion5");
+                else if(isReverorBloq(cartaajugar,ultcarta)){
+                    System.out.println("Validacion5");
                     lineaDeJuego.add(cartaajugar);
                     jugador.getMano().remove(cartaajugar);
                     System.out.println("Vuelve a ser su turno");
-            }
+                }
             
-            //Cuarta regla
-            else if(iscomodin(ultcarta)){
-                System.out.println("Validacion4");
-                Random rd = new Random();
-                CartaEspecial ct=(CartaEspecial)ultcarta;
-                if(ct.getTipo()==TipoEspecial.MAS2)
+                //Cuarta regla
+                else if(iscomodin(ultcarta)){
+                    System.out.println("Validacion4");
+                    Random rd = new Random();
+                    CartaEspecial ct=(CartaEspecial)ultcarta;
+                    if(ct.getTipo()==TipoEspecial.MAS2)
                     for(int i = 0; i<2; i++){
                         jugador.getMano().add(baraja.remove(rd.nextInt(baraja.size())));
-                }
+                    }
                 else{
                     for(int i = 0; i<4; i++){
                         jugador.getMano().add(baraja.remove(rd.nextInt(baraja.size())));
