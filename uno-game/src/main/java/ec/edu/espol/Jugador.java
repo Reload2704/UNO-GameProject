@@ -1,5 +1,6 @@
 package ec.edu.espol;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Jugador {
     private String nombre;
@@ -15,10 +16,12 @@ public class Jugador {
     public void anadirCarta(Carta carta){
         mano.add(carta);
     }
-    public Carta validarCartaMaquina(Carta ultCard){
+    public Carta validarCartaMaquina(Carta ultCard){ //Lineajuego y turno irán en Juego.
         for(Carta c : mano){
             if(c instanceof CartaNumerica){
                 CartaNumerica cn = (CartaNumerica) c;
+                
+                //Primera regla
                 if(Utilitaria.esIgualCyN(cn, ultCard)){
                     CartaNumerica cnret = cn;
                     mano.remove(cn);
@@ -26,6 +29,38 @@ public class Jugador {
                 }
             } else {
                 CartaEspecial ce = (CartaEspecial) c;
+
+                //Segunda regla
+                if(Utilitaria.esCondicion2(ce, ultCard)){
+                    CartaEspecial ceret = ce;
+                    mano.remove(ce);
+                    return ceret;
+                } 
+
+                //Tercera regla
+                else if(Utilitaria.isNegro(ce)){
+                    Random rd = new Random();
+                    Color [] colores = {Color.ROJO,Color.AMARILLO,Color.VERDE,Color.AZUL};
+                    CartaEspecial ceret = ce;
+                    int idxrd = rd.nextInt(colores.length-1);
+                    ceret.setColor(colores[idxrd]);
+                    mano.remove(ce);
+                    return ceret;
+                }
+
+                //Quinta regla
+                else if(Utilitaria.isReverorBloq(ce,ultCard)){
+                    CartaEspecial ceret = ce;
+                    mano.remove(ce);
+                    return ceret;
+                }
+
+                //Cuarta Regla
+                else if(Utilitaria.iscomodincartajuego(ce, ultCard)){
+                    CartaEspecial ceret = ce;
+                    mano.remove(ce);
+                    return ceret;
+                }
             }
         }
         return null;
