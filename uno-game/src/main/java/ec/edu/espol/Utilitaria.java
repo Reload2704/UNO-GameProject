@@ -128,5 +128,24 @@ public class Utilitaria {
         int randomIndex = rd.nextInt(colors.length);
         return colors[randomIndex];
         }
-
+        
+        public static boolean validacionGeneral(Carta cartaajugar, Carta ulCarta){
+            if (cartaajugar instanceof CartaNumerica){
+                CartaNumerica cartanum=(CartaNumerica)cartaajugar;
+    
+                if(esIgualCyN(cartanum,ulCarta)){
+                    return true;
+                }
+                return false;
+            }
+            else if (cartaajugar instanceof CartaEspecial){
+                CartaEspecial especard= (CartaEspecial)cartaajugar;
+                if(isNegro(cartaajugar) || esCondicion2(especard, ulCarta)||isReverorBloq(especard,ulCarta)){
+                    return true;
+                }
+                else
+                    return false;
+            }
+            return false;
+        }
 }

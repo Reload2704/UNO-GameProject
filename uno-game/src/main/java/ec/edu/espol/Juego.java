@@ -43,6 +43,13 @@ public class Juego {
                 System.out.println("Ultima Carta: "+ultcarta);
     
                 Scanner sc = new Scanner (System.in);
+                boolean yes=false;
+                for(Carta c: jugador.getMano()){
+                    if(Utilitaria.validacionGeneral(c,ultcarta)){
+                        yes=true;
+                    }
+                }
+                    System.out.println("Se puede jugar?"+yes);
 
                 System.out.println("¿Cuál es su carta a jugar? (Indique la posición)");
                 int position= sc.nextInt()-1;
