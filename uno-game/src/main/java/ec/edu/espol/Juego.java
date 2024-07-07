@@ -52,7 +52,7 @@ public class Juego {
                 System.out.println(cartaajugar);
 
                 //Primera regla
-                if(esIgualCyN(cartaajugar, ultcarta)){
+                if(Utilitaria.esIgualCyN(cartaajugar, ultcarta)){
                     lineaDeJuego.add(cartaajugar);
                     jugador.jugarCarta(position);
                     turno=1;
@@ -62,7 +62,7 @@ public class Juego {
 
            
                 //Segunda regla
-                else if(esCondicion2(cartaajugar, ultcarta)){
+                else if(Utilitaria.esCondicion2(cartaajugar, ultcarta)){
                     lineaDeJuego.add(cartaajugar);
                     jugador.getMano().remove(cartaajugar);
                     turno=1;
@@ -70,7 +70,7 @@ public class Juego {
                 }
 
                 //Tercera regla
-                else if (isNegro(cartaajugar)){
+                else if (Utilitaria.isNegro(cartaajugar)){
                     System.out.println("¿Cuál será el color para el siguiente turno?");
                     String colornew= sc.nextLine();
                     lineaDeJuego.add(cartaajugar);
@@ -81,7 +81,7 @@ public class Juego {
                 }
                 //quinta regla
 
-                else if(isReverorBloq(cartaajugar,ultcarta)){
+                else if(Utilitaria.isReverorBloq(cartaajugar,ultcarta)){
                     System.out.println("Validacion5");
                     lineaDeJuego.add(cartaajugar);
                     jugador.getMano().remove(cartaajugar);
@@ -89,7 +89,7 @@ public class Juego {
                 }
             
                 //Cuarta regla(SOLO PARA AGARRAR CARTA)
-                else if(iscomodin(ultcarta)){ //se usa la validacion que indica si es +2 o +4 (true basta que solo 1 sea)
+                else if(Utilitaria.iscomodin(ultcarta)){ //se usa la validacion que indica si es +2 o +4 (true basta que solo 1 sea)
                     System.out.println("Validacion4");
                     CartaEspecial ct=(CartaEspecial)ultcarta;
                     if(ct.getTipo()==TipoEspecial.MAS2) //si la carta es +2 agarra +2 cartas a su baraja
@@ -106,7 +106,7 @@ public class Juego {
                  }
 
                  //Cuarta regla pt2. (PARA AGREGAR A LINEA DE JUEGO CARTAS +2 Y +4)
-                 else if(iscomodincartajuego(cartaajugar,ultcarta)){
+                 else if(Utilitaria.iscomodincartajuego(cartaajugar,ultcarta)){
                     lineaDeJuego.add(cartaajugar);
                     jugador.getMano().remove(cartaajugar);
                     turno=1;
@@ -137,11 +137,11 @@ public class Juego {
             for(i=0; banderacarta==0 ;i++){
                 int posicion= i;
                 Carta cartaajugar=maquina.getMano().get(posicion);
-                System.out.println("Carta agarrada"+cartaajugar);
+                System.out.println("Carta agarrada"+cartaajugar+"/n");
                 System.out.println(cartaajugar);
 
                 //Primera regla
-                if(esIgualCyN(cartaajugar, ultcarta)){
+                if(Utilitaria.esIgualCyN(cartaajugar, ultcarta)){
                     lineaDeJuego.add(cartaajugar);
                     jugador.jugarCarta(posicion);
                     turno=0;
@@ -151,7 +151,7 @@ public class Juego {
                     
                
                 //Segunda regla
-                else if(esCondicion2(cartaajugar, ultcarta)){
+                else if(Utilitaria.esCondicion2(cartaajugar, ultcarta)){
                     lineaDeJuego.add(cartaajugar);
                     maquina.getMano().remove(cartaajugar);
                     turno=0;
@@ -160,12 +160,12 @@ public class Juego {
                 }
     
                 //Tercera regla
-                else if (isNegro(cartaajugar)){
+                else if (Utilitaria.isNegro(cartaajugar)){
                     System.out.println("¿Cuál será el color para el siguiente turno?");
                     Random rd = new Random();
-                    Color randomColor = getRandomColor(rd);
+                    Color randomColor = Utilitaria.getRandomColor(rd);
                     while(randomColor.equals(Color.NEGRO)){
-                        randomColor = getRandomColor(rd);
+                        randomColor = Utilitaria.getRandomColor(rd);
                     }
                     System.out.println("Color aleatorio: " + randomColor);
                     lineaDeJuego.add(cartaajugar);
@@ -177,7 +177,7 @@ public class Juego {
 
                 //quinta regla
     
-                else if(isReverorBloq(cartaajugar,ultcarta)){
+                else if(Utilitaria.isReverorBloq(cartaajugar,ultcarta)){
                     System.out.println("Validacion5");
                         lineaDeJuego.add(cartaajugar);
                         maquina.getMano().remove(cartaajugar);
@@ -218,120 +218,6 @@ public class Juego {
     public Carta robarCarta(){
         return baraja.remove(baraja.size()-1);
     }
-
-    //Primera validación. (Recibe carta a jugar y ultima carta de linea de juego. Dice si tiene igual color o número)
-    public boolean esIgualCyN(Carta cartaajugar, Carta ulCarta){
-        if(cartaajugar instanceof CartaNumerica){
-       if( cartaajugar.getColor().equals(ulCarta.getColor()) || cartaajugar.getNumero()==(ulCarta.getNumero())){
-        return true;
-       }
-       else
-       return false;
-    }
-       else
-       return false;
-    }
-
-    /*Segunda condición (Recibe carta jugar y ult carta linea de juego. 
-    Dice si la carta comodin cambio de color tiene el mismo color que ult linea de juego)*/
-
-    public boolean esCondicion2(Carta cartaajugar, Carta ulCarta){
-        if(cartaajugar instanceof CartaEspecial){
-            CartaEspecial playercarta=(CartaEspecial)cartaajugar;
-            if((playercarta.getColor()==ulCarta.getColor())&&(playercarta.getTipo()==TipoEspecial.CAMBIO_DE_COLOR)){
-                return true;
-            }
-            else
-                return false;
-        }
-        else
-            return false;
-        }
-    
-    //Tercera condición(Recibe la carta a jugar y solo dice si es negro o no)
-
-    public boolean isNegro(Carta cartaajugar){
-        if(cartaajugar.getColor()==(Color.NEGRO)){
-            return true;
-        }
-        else
-        return false;
-    }
-
-    //Cuarta condición(recibe la ultimacarta de linea de juego o la carta de juego  e indica si es un +2 o +4)
-    public boolean iscomodin(Carta cartaplay){
-        if(cartaplay instanceof CartaEspecial){
-        CartaEspecial ct=(CartaEspecial)cartaplay;
-            if(ct.getTipo()==(TipoEspecial.MAS2) || ct.getTipo()==(TipoEspecial.MAS4)){
-                return true;
-             }
-        else
-             return false;
-        }
-    else
-        return false;
-    }
-
-    //Quinta condición(recibe la carta a jugar y la ultima carta de linea de juego)
-    //indica sila carta a jugar es reversa o bloqueo y q solo será usada si el color
-    //de la ultima carta coincide con la misma o si son del mismo tipo (e.g Bloqueo se responde con Bloqueo))
-    public boolean isReverorBloq(Carta cartaajugar,Carta ulCarta){
-        if(cartaajugar instanceof CartaEspecial){
-            CartaEspecial playercarta=(CartaEspecial)cartaajugar;
-            if((playercarta.getTipo().equals(TipoEspecial.REVERSE) || playercarta.getTipo().equals(TipoEspecial.BLOQUEO))&&(ulCarta.getColor()==cartaajugar.getColor()||ulCartaescomodin(ulCarta, cartaajugar))){
-                return true;
-            }
-            else 
-                return false;
-        }
-        else
-            return false;
-    }
-
-    //Septima Condicion (Condicion para gritar UNOOO. Aun no implementada)
-    public boolean lastCarta(ArrayList<Carta> mano){
-        if(mano.size()==1){
-            return true;
-        }
-        return false;
-    }
-
-    //es ultcarta comodin? (Está siendo usada en la quinta condicion para validar que carta de bloqueo y reversa
-    //se pueden responder entre si , independiente del color ) BLOQUEO ROJO-BLOQUEO AMARILLO / REVERSE ROJO-REVERSE AZUL
-
-    public boolean ulCartaescomodin(Carta ulCarta, Carta cartaajugar){
-        if(ulCarta instanceof CartaEspecial && cartaajugar instanceof CartaEspecial){
-            CartaEspecial ct=(CartaEspecial)ulCarta;
-            CartaEspecial playercarta=(CartaEspecial)cartaajugar;
-            if(ct.getTipo()==playercarta.getTipo()){
-                return true;
-            }
-            return false;
-        }
-        return false;
-    }
-
-    //ESta validadacion se usa para agregar a linea de juego cartas +2 y +4
-    //Primero se verifica si es especial, se le hace downcasting, comparamos si
-    //es un +2 o +4 Y SI TIENE EL MISMO COLOR QUE LA ULTIMA CARTA DE LINEA DE JUEGO
-    public boolean iscomodincartajuego(Carta cartaajugar, Carta ulCarta){
-        if (cartaajugar instanceof CartaEspecial) {
-            CartaEspecial playercarta=(CartaEspecial)cartaajugar;
-            if((playercarta.getTipo()==TipoEspecial.MAS2||playercarta.getTipo()==TipoEspecial.MAS4)&& cartaajugar.getColor()==(ulCarta.getColor())){
-                return true;
-            }
-            return false;
-        }
-        return false;
-    }
-
-    //obtener color aleatorio (Para que la maquina opueda colocar un color random en caso de escoger cambio de color)
-    public static Color getRandomColor(Random rd) {
-        Color[] colors = Color.values();
-        int randomIndex = rd.nextInt(colors.length);
-        return colors[randomIndex];
-        }
-
 
     @Override
     public String toString() {
