@@ -2,17 +2,10 @@ package ec.edu.espol;
 
 public abstract class Carta {
     protected Color color;
-    protected CartaNumerica numero;
-    protected CartaEspecial especial;
-
-    public Carta(Color color, CartaNumerica numero, CartaEspecial especial){
-        this.color = color;
-        this.numero = numero;
-        this.especial = especial;
-    }
+    
 
     public Carta(Color color){
-        this.color= color;
+        this.color = color;
     }
 
 
@@ -23,21 +16,10 @@ public abstract class Carta {
         return color;
     }
 
-    public CartaNumerica getNumero() {
-        return numero;
-    }
-
-    public CartaEspecial getEspecial() {
-        return especial;
-    }
-    public CartaEspecial setColor(Color color) {
+    public void setColor(Color color) {
         this.color = color;
-        return especial;
     }
 
-    @Override
-    public String toString() {
-        return "Carta [color=" + color + ", numero=" + numero + ", especial=" + especial + "]";
-    }
+    
 
 }
