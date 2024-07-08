@@ -2,7 +2,6 @@ package ec.edu.espol;
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.Random;
-
 public class Juego {
     private ArrayList<Carta> baraja;
     private Jugador jugador;
@@ -15,22 +14,19 @@ public class Juego {
         this.maquina = maquina;
         this.lineaDeJuego = lineaDeJuego;
     }
-
     public void setBaraja(ArrayList<Carta> baraja) {
         this.baraja = baraja;
     }
-
     public void iniciarJuego(){
         jugador.setMano(crearMano());
         System.out.println("Mano del jugador "+jugador.getNombre()+": "+ jugador.getMano());
         maquina.setMano(crearMano());
         System.out.println("Mano del jugador "+maquina.getNombre()+": "+ maquina.getMano());
         System.out.println("\n"+this);
-
         //Se refieren al turno maquina (-1) y turno jugador (1)
         int turno=0;
 
-        while (!jugador.getMano().isEmpty() || !maquina.getMano().isEmpty()) {
+        while (!(jugador.getMano().isEmpty() || maquina.getMano().isEmpty())) {
             /*Aqui va la lógica completa del juego.
              * El bucle acaba cuando la mano de uno de los jugadores queda vacia.
             */
@@ -41,23 +37,22 @@ public class Juego {
     
                 Carta ultcarta=lineaDeJuego.get(lineaDeJuego.size()-1);
                 System.out.println("Ultima Carta: "+ultcarta);
-
             //Cuarta regla(SOLO PARA AGARRAR CARTA)
             if(Utilitaria.iscomodin(ultcarta)){ //se usa la validacion que indica si es +2 o +4 (true basta que solo 1 sea)
                 System.out.println("Validacion4");
                 CartaEspecial ct=(CartaEspecial)ultcarta;
                 if(ct.getTipo()==TipoEspecial.MAS2){ //si la carta es +2 agarra +2 cartas a su baraja
-                    for(int i = 0; i==2; i++){
+                    for(int i = 0; i<2; i++){
                         jugador.anadirCarta(robarCarta());
                         System.out.println("Robaste!");
                     }
-                } else{
-                    for(int i = 0; i==4; i++){ //si no es +2, significa que es +4. entonces agarra 4 cartas
+                } else if(ct.getTipo()==TipoEspecial.MAS4){
+                    for(int i = 0; i<4; i++){ //si no es +2, significa que es +4. entonces agarra 4 cartas
                         jugador.anadirCarta(robarCarta());
                         System.out.println("Robaste!");
                     }
                 }
-                turno=1;
+                System.out.println("Mano actualizado: "+jugador.getMano());
             }
                 Scanner sc = new Scanner (System.in);
                 boolean yes=false;
@@ -75,10 +70,8 @@ public class Juego {
                 System.out.println("¿Cuál es su carta a jugar? (Indique la posición)");
                 int position= sc.nextInt()-1;
                 sc.nextLine();
-
                 Carta cartaajugar = jugador.getMano().get(position);
                 System.out.println(cartaajugar);
-
                 if(cartaajugar instanceof CartaNumerica){
                     CartaNumerica CNajugar = (CartaNumerica) cartaajugar;
                     
@@ -89,7 +82,6 @@ public class Juego {
                         turno=1;
                         System.out.println("Validacion1");
                     }
-
                 } else {
                     CartaEspecial CEajugar = (CartaEspecial) cartaajugar;
                     
@@ -100,7 +92,6 @@ public class Juego {
                         turno=1;
                         System.out.println("prueba 2");
                     }
-
                     //Tercera regla
                     else if(Utilitaria.isNegro(CEajugar)){
                         System.out.println("¿Cuál será el color para el siguiente turno?");
@@ -115,7 +106,6 @@ public class Juego {
                         System.out.println("Linea de juego x:" + lineaDeJuego);
                         turno=1;
                     }
-
                     //quinta regla
                     else if(Utilitaria.isReverorBloq(CEajugar,ultcarta)){
                         System.out.println("Validacion5");
@@ -123,7 +113,6 @@ public class Juego {
                         jugador.jugarCarta(position);
                         System.out.println("Vuelve a ser su turno");
                     }
-
                     //Cuarta regla(SOLO PARA AGARRAR CARTA)
                     else if(Utilitaria.iscomodin(ultcarta)){ //se usa la validacion que indica si es +2 o +4 (true basta que solo 1 sea)
                         System.out.println("Validacion4");
@@ -139,7 +128,6 @@ public class Juego {
                         }
                         turno=1;
                     }
-
                     //Cuarta regla pt2. (PARA AGREGAR A LINEA DE JUEGO CARTAS +2 Y +4)
                     else if(Utilitaria.iscomodincartajuego(CEajugar,ultcarta)){
                        lineaDeJuego.add(CEajugar);
@@ -155,14 +143,31 @@ public class Juego {
                 System.out.println("\n-----------------TURNO MAQUINA-----------------");
                 System.out.println("\nMano maquina: "+maquina.getMano());
                 System.out.println("Linea de juego: "+lineaDeJuego);
-
                 //Sacamos la ultima carta de linea de juego
                 Carta ultcarta=lineaDeJuego.get(lineaDeJuego.size()-1);
                 System.out.println("Ultima carta: "+ultcarta);
-                
+
+                //Validacion si ultCarta es Especial de tipo +2 o +4
+                if(Utilitaria.iscomodin(ultcarta)){ //se usa la validacion que indica si es +2 o +4 (true basta que solo 1 sea)
+                    System.out.println("Validacion4");
+                    CartaEspecial ct=(CartaEspecial)ultcarta;
+                    if(ct.getTipo()==TipoEspecial.MAS2){ //si la carta es +2 agarra +2 cartas a su baraja
+                        for(int i = 0; i<2; i++){
+                            maquina.anadirCarta(robarCarta());
+                            System.out.println("Robaste!");
+                        }
+                    } else if(ct.getTipo()==TipoEspecial.MAS4){
+                        for(int i = 0; i<4; i++){ //si no es +2, significa que es +4. entonces agarra 4 cartas
+                            maquina.anadirCarta(robarCarta());
+                            System.out.println("Robaste!");
+                        }
+                    }
+                    System.out.println("Mano actualizado: " + maquina.getMano());
+                }
+
                 //Seleccion de carta por maquina
                 Carta cartaajugar = maquina.validarCartaMaquina(ultcarta);
-                
+
                 //Validacion de si la carta es null, roba una carta automaticamente
                 if(cartaajugar != null){
                     System.out.println("Carta jugada: "+cartaajugar);
@@ -180,23 +185,19 @@ public class Juego {
                 }
             } //cierre turno 1
         } //cierre while
-
         if (jugador.getMano().isEmpty()){
             System.out.println("Felicidades, has ganado!");
         } 
         else {
             System.out.println("Mala suerte, has perdido!");
         }
-
     }//cierre iniciar juego
-
         /* ------------- Notas -------------
          * Para robar carta seria: jugador.anadirCarta(robarCarta()) y maquina.anadirCarta(robarCarta());
          * Habria que crear un metodo en Jugador que permita agregar listas de cartas (anadirCartas(ArrayList<Carta> cartas))
          * Habria que crear un metodo en Juego que devuelva una lista de cartas ArrayList<Carta> robarCartas()
          * Los dos metodos anteriores serviran al momento de usar un +2 o +4
         */
-
     //-------------------METODOS--------------------//
     public ArrayList<Carta> crearMano(){
         Random rd = new Random();
@@ -206,11 +207,9 @@ public class Juego {
         }
         return manoJug;
     }
-
     public Carta robarCarta(){
         return baraja.remove(baraja.size()-1);
     }
-
     @Override
     public String toString() {
         return "Linea de Juego: " + lineaDeJuego;
