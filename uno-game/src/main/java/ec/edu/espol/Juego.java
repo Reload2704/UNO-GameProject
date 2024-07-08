@@ -144,8 +144,13 @@ public class Juego {
                 //Validacion de si la carta es null, roba una carta automaticamente
                 if(cartaajugar != null){
                     System.out.println("Carta jugada: "+cartaajugar);
-                    lineaDeJuego.add(cartaajugar);
-                    turno = 0;
+                    if(Utilitaria.isReverorBloq(cartaajugar, ultcarta)){
+                        System.out.println("Vuelve a ser su turno");
+                        lineaDeJuego.add(cartaajugar);
+                    } else{
+                        lineaDeJuego.add(cartaajugar);
+                        turno = 0;
+                    }
                 } else {
                     maquina.anadirCarta(robarCarta());
                     System.out.println("La maquina ha robado una carta!");
