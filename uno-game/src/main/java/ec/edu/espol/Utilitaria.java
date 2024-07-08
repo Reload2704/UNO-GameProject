@@ -141,7 +141,7 @@ public class Utilitaria {
             }
             else if (cartaajugar instanceof CartaEspecial){
                 CartaEspecial especard= (CartaEspecial)cartaajugar;
-                if(isNegro(cartaajugar) || esCondicion2(especard, ulCarta)||isReverorBloq(especard,ulCarta)){
+                if(isNegro(cartaajugar) || esCondicion2(especard, ulCarta)||isReverorBloq(especard,ulCarta)||iscomodincartajuego(especard,ulCarta)){
                     return true;
                 }
                 else
