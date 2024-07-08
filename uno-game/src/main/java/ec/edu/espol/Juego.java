@@ -178,66 +178,6 @@ public class Juego {
                     System.out.println("La maquina ha robado una carta!");
                     turno = 0;
                 }
-
-
-                //Dentro de un for ponemos las condiciones y en cuanto cambie por primera 
-                //vez la cartabandera a =1, se deja de realizar el for.
-
-                /*
-                int i;
-                int banderacarta=0;
-                for(i=0; banderacarta==0 ;i++){
-                    int posicion= i;
-                    Carta cartaajugar=maquina.getMano().get(posicion);
-                    System.out.println("Carta agarrada"+cartaajugar+"/n");
-                    System.out.println(cartaajugar);
-
-                    //Primera regla
-                    if(Utilitaria.esIgualCyN(cartaajugar, ultcarta)){
-                        lineaDeJuego.add(cartaajugar);
-                        jugador.jugarCarta(posicion);
-                        turno=0;
-                        banderacarta=1;
-                        System.out.println("Validacion1.2");
-                    }
-                        
-                
-                    //Segunda regla
-                    else if(Utilitaria.esCondicion2(cartaajugar, ultcarta)){
-                        lineaDeJuego.add(cartaajugar);
-                        maquina.getMano().remove(cartaajugar);
-                        turno=0;
-                        banderacarta=1;
-                        System.out.println("prueba 2.2");
-                    }
-        
-                    //Tercera regla
-                    else if (Utilitaria.isNegro(cartaajugar)){
-                        System.out.println("¿Cuál será el color para el siguiente turno?");
-                        Random rd = new Random();
-                        Color randomColor = Utilitaria.getRandomColor(rd);
-                        while(randomColor.equals(Color.NEGRO)){
-                            randomColor = Utilitaria.getRandomColor(rd);
-                        }
-                        System.out.println("Color aleatorio: " + randomColor);
-                        lineaDeJuego.add(cartaajugar);
-                        maquina.jugarCarta(posicion);
-        
-                        turno=0;
-                        banderacarta=1;
-                    }
-
-                    //quinta regla
-        
-                    else if(Utilitaria.isReverorBloq(cartaajugar,ultcarta)){
-                        System.out.println("Validacion5");
-                            lineaDeJuego.add(cartaajugar);
-                            maquina.getMano().remove(cartaajugar);
-                            System.out.println("Vuelve a ser su turno maquina");
-                    }
-
-                    
-                } //cierre for*/
             } //cierre turno 1
         } //cierre while
 
