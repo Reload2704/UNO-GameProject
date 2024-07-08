@@ -90,8 +90,11 @@ public class Utilitaria {
     //indica sila carta a jugar es reversa o bloqueo y q solo será usada si el color
     //de la ultima carta coincide con la misma o si son del mismo tipo (e.g Bloqueo se responde con Bloqueo))
     public static boolean isReverorBloq(Carta cartaajugar,Carta ulCarta){
-        CartaEspecial cartaTrans = (CartaEspecial) cartaajugar;
-            return (cartaTrans.getTipo().equals(TipoEspecial.REVERSE) || cartaTrans.getTipo().equals(TipoEspecial.BLOQUEO))&&(ulCarta.getColor()==cartaajugar.getColor()||ulCartaescomodin(ulCarta, cartaajugar)||iscomodincartajuego(cartaTrans,ulCarta));
+        if (cartaajugar instanceof CartaEspecial) {
+            CartaEspecial cartaTrans = (CartaEspecial) cartaajugar;
+            return (cartaTrans.getTipo().equals(TipoEspecial.REVERSE) || cartaTrans.getTipo().equals(TipoEspecial.BLOQUEO))&&(ulCarta.getColor()==cartaajugar.getColor()||ulCartaescomodin(ulCarta, cartaajugar));
+        }
+        return false;
     }
 
     //Septima Condicion (Condicion para gritar UNOOO. Aun no implementada)
