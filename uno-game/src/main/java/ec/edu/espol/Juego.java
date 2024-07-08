@@ -137,6 +137,7 @@ public class Juego {
                     } else
                         System.out.println("Su carta no es valida, por favor repita");
                 }
+                Utilitaria.lastCarta(jugador.getMano());
             }
             } if(turno==1){
                 
@@ -178,6 +179,7 @@ public class Juego {
                         lineaDeJuego.add(cartaajugar);
                         turno = 0;
                     }
+                    Utilitaria.lastCarta(maquina.getMano());
                 } else {
                     maquina.anadirCarta(robarCarta());
                     System.out.println("La maquina ha robado una carta!");
@@ -192,12 +194,7 @@ public class Juego {
             System.out.println("Mala suerte, has perdido!");
         }
     }//cierre iniciar juego
-        /* ------------- Notas -------------
-         * Para robar carta seria: jugador.anadirCarta(robarCarta()) y maquina.anadirCarta(robarCarta());
-         * Habria que crear un metodo en Jugador que permita agregar listas de cartas (anadirCartas(ArrayList<Carta> cartas))
-         * Habria que crear un metodo en Juego que devuelva una lista de cartas ArrayList<Carta> robarCartas()
-         * Los dos metodos anteriores serviran al momento de usar un +2 o +4
-        */
+
     //-------------------METODOS--------------------//
     public ArrayList<Carta> crearMano(){
         Random rd = new Random();

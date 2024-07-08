@@ -98,11 +98,9 @@ public class Utilitaria {
     }
 
     //Septima Condicion (Condicion para gritar UNOOO. Aun no implementada)
-    public static boolean lastCarta(ArrayList<Carta> mano){
-        if(mano.size()==1){
-            return true;
-        }
-        return false;
+    public static void lastCarta(ArrayList<Carta> mano){
+        if(mano.size()==1)
+            System.out.println("\nUNOOOOO!");
     }
 
     //es ultcarta comodin? (Está siendo usada en la quinta condicion para validar que carta de bloqueo y reversa
