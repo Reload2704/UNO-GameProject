@@ -41,7 +41,24 @@ public class Juego {
     
                 Carta ultcarta=lineaDeJuego.get(lineaDeJuego.size()-1);
                 System.out.println("Ultima Carta: "+ultcarta);
-    
+
+            //Cuarta regla(SOLO PARA AGARRAR CARTA)
+            if(Utilitaria.iscomodin(ultcarta)){ //se usa la validacion que indica si es +2 o +4 (true basta que solo 1 sea)
+                System.out.println("Validacion4");
+                CartaEspecial ct=(CartaEspecial)ultcarta;
+                if(ct.getTipo()==TipoEspecial.MAS2){ //si la carta es +2 agarra +2 cartas a su baraja
+                    for(int i = 0; i==2; i++){
+                        jugador.anadirCarta(robarCarta());
+                        System.out.println("Robaste!");
+                    }
+                } else{
+                    for(int i = 0; i==4; i++){ //si no es +2, significa que es +4. entonces agarra 4 cartas
+                        jugador.anadirCarta(robarCarta());
+                        System.out.println("Robaste!");
+                    }
+                }
+                turno=1;
+            }
                 Scanner sc = new Scanner (System.in);
                 boolean yes=false;
                 for(Carta c: jugador.getMano()){

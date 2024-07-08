@@ -91,7 +91,7 @@ public class Utilitaria {
     //de la ultima carta coincide con la misma o si son del mismo tipo (e.g Bloqueo se responde con Bloqueo))
     public static boolean isReverorBloq(Carta cartaajugar,Carta ulCarta){
         CartaEspecial cartaTrans = (CartaEspecial) cartaajugar;
-            return (cartaTrans.getTipo().equals(TipoEspecial.REVERSE) || cartaTrans.getTipo().equals(TipoEspecial.BLOQUEO))&&(ulCarta.getColor()==cartaajugar.getColor()||ulCartaescomodin(ulCarta, cartaajugar));
+            return (cartaTrans.getTipo().equals(TipoEspecial.REVERSE) || cartaTrans.getTipo().equals(TipoEspecial.BLOQUEO))&&(ulCarta.getColor()==cartaajugar.getColor()||ulCartaescomodin(ulCarta, cartaajugar)||iscomodincartajuego(cartaTrans,ulCarta));
     }
 
     //Septima Condicion (Condicion para gritar UNOOO. Aun no implementada)
@@ -140,8 +140,8 @@ public class Utilitaria {
                 return false;
             }
             else if (cartaajugar instanceof CartaEspecial){
-                CartaEspecial especard= (CartaEspecial)cartaajugar;
-                if(isNegro(cartaajugar) || esCondicion2(especard, ulCarta)||isReverorBloq(especard,ulCarta)||iscomodincartajuego(especard,ulCarta)){
+                CartaEspecial especards= (CartaEspecial)cartaajugar;
+                if(isNegro(cartaajugar) || esCondicion2(especards, ulCarta)||isReverorBloq(especards,ulCarta)||iscomodincartajuego(especards,ulCarta)){
                     return true;
                 }
                 else
