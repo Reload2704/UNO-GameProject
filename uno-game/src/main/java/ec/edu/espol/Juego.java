@@ -32,7 +32,7 @@ public class Juego {
             */
             if(turno==0){
                 System.out.println("\n-----------------TURNO JUGADOR-----------------");
-                System.out.println(jugador.getMano());
+                System.out.println("Mano del jugador: "+jugador.getMano());
                 System.out.println("Linea de Juego: "+lineaDeJuego);
     
                 Carta ultcarta=lineaDeJuego.get(lineaDeJuego.size()-1);
