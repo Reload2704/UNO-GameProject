@@ -1,0 +1,647 @@
+[33mcommit da67cd38215413a94fd211d9d769e58c386010b0[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Reload2704 <joranbra@espol.edu.ec>
+Date:   Sun Jul 7 21:29:06 2024 -0500
+
+    Arreglo sintaxis
+
+[33mcommit 0e8809845e01b259a38893e002b4f89fa8b2928e[m
+Author: Reload2704 <joranbra@espol.edu.ec>
+Date:   Sun Jul 7 21:23:22 2024 -0500
+
+    areglo sintaxis
+
+[33mcommit f8484032d4bba90b899e827620a8df34d056fc6e[m
+Author: Reload2704 <joranbra@espol.edu.ec>
+Date:   Sun Jul 7 21:04:52 2024 -0500
+
+    Actualizacion clase Juego
+
+[33mcommit 015c9a7b2aaeca8ccd002aae6c577eb4c6a65df5[m
+Author: Reload2704 <joranbra@espol.edu.ec>
+Date:   Sun Jul 7 20:54:01 2024 -0500
+
+    Actualizacion clase Juego
+
+[33mcommit 61dc8d7223b9e648e6813cf075c4fa78bca3e738[m
+Merge: aedc9f3 4390e38
+Author: Reload2704 <joranbra@espol.edu.ec>
+Date:   Sun Jul 7 20:46:06 2024 -0500
+
+    Merge branch 'main' of https://github.com/Reload2704/UNO-GameProject
+
+[33mcommit aedc9f37d93b93757fa09fa8d707147440266b2e[m
+Author: Reload2704 <joranbra@espol.edu.ec>
+Date:   Sun Jul 7 20:44:32 2024 -0500
+
+    Actualizacion de mas2 y mas4
+
+[33mcommit 4390e38387571d54fe18550de2a72910eec63afb[m
+Merge: bdc2da9 2ec99f6
+Author: greenkarla <ktvelasc@espol.edu.ec>
+Date:   Sun Jul 7 20:28:09 2024 -0500
+
+    Merge branch 'main' of https://github.com/Reload2704/UNO-GameProject
+
+[33mcommit bdc2da951451df543d29d99c87fbccfde958a824[m
+Merge: 426af67 d809e89
+Author: greenkarla <ktvelasc@espol.edu.ec>
+Date:   Sun Jul 7 20:10:53 2024 -0500
+
+    Merge branch 'main' of https://github.com/Reload2704/UNO-GameProject
+
+[33mcommit 2ec99f670f605fbc0b49c363852b9bbefdd0b05a[m
+Author: Reload2704 <joranbra@espol.edu.ec>
+Date:   Sun Jul 7 19:53:47 2024 -0500
+
+    Actualizacion condicion 5
+
+[33mcommit 34bbdfbdb601f03f9be4b3a61931ffaec065bf2d[m
+Author: Reload2704 <joranbra@espol.edu.ec>
+Date:   Sun Jul 7 19:52:36 2024 -0500
+
+    Actualizacion maquina
+
+[33mcommit 1a90201518477a1c5f873a2f266b0db2412b9ee2[m
+Author: mapachavez <166883262+mapachavez@users.noreply.github.com>
+Date:   Sun Jul 7 19:49:37 2024 -0500
+
+    Implementacion comer carta en caso de que no haya carta jugable
+    
+    Co-Authored-By: greenkarla <174214871+greenkarla@users.noreply.github.com>
+
+[33mcommit e64fdef30e4e8b1c9d27e0c4e88854b018dc4dd2[m
+Merge: 0637d81 ff49001
+Author: Reload2704 <joranbra@espol.edu.ec>
+Date:   Sun Jul 7 19:22:42 2024 -0500
+
+    Merge branch 'main' of https://github.com/Reload2704/UNO-GameProject
+
+[33mcommit 0637d813cbf9bcbf379e3902da2bbb30efddf3b2[m
+Author: Reload2704 <joranbra@espol.edu.ec>
+Date:   Sun Jul 7 19:19:44 2024 -0500
+
+    Mejora a Maquina
+
+[33mcommit ff49001bb419436aa373c6fabb0395ebcfc39f34[m
+Author: mapachavez <166883262+mapachavez@users.noreply.github.com>
+Date:   Sun Jul 7 18:58:18 2024 -0500
+
+    Roba cartas cuando no tiene cartas jugables
+    
+    Co-Authored-By: greenkarla <174214871+greenkarla@users.noreply.github.com>
+
+[33mcommit a04ea05b32ae71a5d3a0cb2623a879b74d62140b[m
+Author: mapachavez <166883262+mapachavez@users.noreply.github.com>
+Date:   Sun Jul 7 18:36:15 2024 -0500
+
+    Agregar validacion general por turno
+    
+    Co-Authored-By: Jorge Andres Bravo Vidal <139006472+Reload2704@users.noreply.github.com>
+    Co-Authored-By: greenkarla <174214871+greenkarla@users.noreply.github.com>
+
+[33mcommit 5bf50846372fbd8c9ad395e9a49785d2a32b1395[m
+Author: Reload2704 <joranbra@espol.edu.ec>
+Date:   Sun Jul 7 18:28:10 2024 -0500
+
+    Actualizacion a la Maquina
+
+[33mcommit ae81a178ff04d0208d80fb88abf3e32fe6b230c2[m
+Author: mapachavez <166883262+mapachavez@users.noreply.github.com>
+Date:   Sun Jul 7 18:06:25 2024 -0500
+
+    ingreso, nextLine()
+    
+    Co-Authored-By: Jorge Andres Bravo Vidal <139006472+Reload2704@users.noreply.github.com>
+    Co-Authored-By: greenkarla <174214871+greenkarla@users.noreply.github.com>
+
+[33mcommit b8880983e50476d0f967398e77d8b9f906a7fbae[m
+Author: mapachavez <166883262+mapachavez@users.noreply.github.com>
+Date:   Sun Jul 7 17:59:47 2024 -0500
+
+    Cambio de color registrado
+    
+    Se logró :D Se hizo un array con los colores y se identificó con el valor ingresado por el usuario. Despues,  se modifica la carta y se la coloca en la baraja
+    
+    Co-Authored-By: Jorge Andres Bravo Vidal <139006472+Reload2704@users.noreply.github.com>
+    Co-Authored-By: greenkarla <174214871+greenkarla@users.noreply.github.com>
+
+[33mcommit 5e4f44b2f84511b75a8d58ebde2742ca06c41727[m
+Author: mapachavez <166883262+mapachavez@users.noreply.github.com>
+Date:   Sun Jul 7 17:29:22 2024 -0500
+
+    Arreglo condicion 1 en utilitaria
+    
+    :shipit: :D
+
+[33mcommit 69f11e2d93ae87dc91508e3502d67ae958432d4c[m
+Author: Reload2704 <joranbra@espol.edu.ec>
+Date:   Sun Jul 7 17:25:23 2024 -0500
+
+    Arreglo turno Maquina en Juego
+
+[33mcommit f8f4295065b21c330f229cec1a53729ff30f2520[m
+Author: Reload2704 <joranbra@espol.edu.ec>
+Date:   Sun Jul 7 16:46:45 2024 -0500
+
+    Arreglo de sintaxis
+
+[33mcommit 528dc5c1ce69d10eddd361cc0faa41532a7fcaa1[m
+Author: Reload2704 <joranbra@espol.edu.ec>
+Date:   Sun Jul 7 16:45:35 2024 -0500
+
+    Metodo nuevo setColor
+
+[33mcommit fe0c22c6636f4a3fe2f1e08f3e072e2fb1bffbaf[m
+Author: Reload2704 <joranbra@espol.edu.ec>
+Date:   Sun Jul 7 16:40:35 2024 -0500
+
+    Metodo de validacion de cartas de Maquina
+
+[33mcommit 1180fb10c3a03ed647c3c7bf83ddc87cc7d7325d[m
+Author: Reload2704 <joranbra@espol.edu.ec>
+Date:   Sun Jul 7 16:03:58 2024 -0500
+
+    Maquina juega carta válida de mano
+
+[33mcommit b97d2c8402db6882422ff283f37dfb2f4448f1d9[m
+Author: Reload2704 <joranbra@espol.edu.ec>
+Date:   Sun Jul 7 15:27:49 2024 -0500
+
+    Arreglo de bugs para Jugador
+
+[33mcommit f70cf2d7521785f5b99b5b67c7c197a450843c68[m
+Author: mapachavez <166883262+mapachavez@users.noreply.github.com>
+Date:   Sun Jul 7 13:49:18 2024 -0500
+
+    Parte 2
+    
+    :shipit: clase utilitaria
+
+[33mcommit 43a1b9be622e075e64e15e27bc19e6c766b1f8a1[m
+Author: mapachavez <166883262+mapachavez@users.noreply.github.com>
+Date:   Sun Jul 7 13:47:30 2024 -0500
+
+    Metodos de juego ahora son de utilitaria
+    
+    :shipit:
+
+[33mcommit 426af67971761866f3c1319b22eabb124a45ad59[m
+Author: greenkarla <ktvelasc@espol.edu.ec>
+Date:   Sun Jul 7 12:26:50 2024 -0500
+
+    Comentarios para realizar los siguientes metodos
+
+[33mcommit d809e89155887eee58ab09fc1759074585d1d944[m
+Author: mapachavez <166883262+mapachavez@users.noreply.github.com>
+Date:   Sun Jul 7 12:23:18 2024 -0500
+
+    Cambio de rd a normal
+    
+    :shipit: :octocat: :neckbeard:
+
+[33mcommit 319d0f1d458ae3104829d6cebd1acef4a247c309[m
+Author: mapachavez <166883262+mapachavez@users.noreply.github.com>
+Date:   Sun Jul 7 11:02:56 2024 -0500
+
+    Agregar metodo
+    
+    Se le agregó el metodo para poder agregar cartas+2 y +4 a la linea de juego, verificando que esta carta tenga el mismo color que la ultima carta de linea de juego :trollface:
+
+[33mcommit a9a1e6c6a766e59f7c0ddaed4f05d5b2d542d01e[m
+Author: mapachavez <166883262+mapachavez@users.noreply.github.com>
+Date:   Sun Jul 7 10:41:40 2024 -0500
+
+    comments e indexacion
+    
+    :cat:
+    
+    Co-Authored-By: Jorge Andres Bravo Vidal <139006472+Reload2704@users.noreply.github.com>
+
+[33mcommit 3608d6e19b4fd5e635b82dd95a42a51af68f75e7[m
+Author: Reload2704 <joranbra@espol.edu.ec>
+Date:   Sun Jul 7 10:07:03 2024 -0500
+
+    Orden de código y sintaxis
+
+[33mcommit 1238779304b3c6f7f68dde3179142189d59b8389[m
+Author: mapachavez <166883262+mapachavez@users.noreply.github.com>
+Date:   Sun Jul 7 09:40:49 2024 -0500
+
+    acctualizacion
+    
+    sale lista latguisima de cartas jugardor sus :cow: :-1: :calling:
+
+[33mcommit 191513ae1d9f162a6124b760d4165f3d741b4326[m
+Author: mapachavez <166883262+mapachavez@users.noreply.github.com>
+Date:   Sun Jul 7 09:23:33 2024 -0500
+
+    error maquina
+    
+    heeeeelpp
+
+[33mcommit 6b050baf79417016cc652c9b5682d8ee4d548772[m
+Author: mapachavez <166883262+mapachavez@users.noreply.github.com>
+Date:   Sun Jul 7 03:39:37 2024 -0500
+
+    Correccion errores, implementacion metodos
+
+[33mcommit 81e5fbb2307afe49b8ad0376609efac216e04e55[m
+Author: mapachavez <166883262+mapachavez@users.noreply.github.com>
+Date:   Sun Jul 7 03:22:24 2024 -0500
+
+    Septima Condición
+    
+    Gritar UNOOOOO cuando solo hay 1 carta B)
+
+[33mcommit b2a712a052109d3039c6173206db95feb1205c9f[m
+Author: mapachavez <166883262+mapachavez@users.noreply.github.com>
+Date:   Sun Jul 7 03:04:32 2024 -0500
+
+    Implementación metodo 5
+
+[33mcommit b9c88a957671ff35566cf477f60768b555f32179[m
+Author: mapachavez <166883262+mapachavez@users.noreply.github.com>
+Date:   Sun Jul 7 03:00:09 2024 -0500
+
+    Implementacion metodo 4
+    
+    Se refiere a la 4ta condición. Comodines no se responden.
+
+[33mcommit a0a606f073e7aacbaed4e7f3085d99dd05fdb969[m
+Author: mapachavez <166883262+mapachavez@users.noreply.github.com>
+Date:   Sun Jul 7 02:54:38 2024 -0500
+
+    Implementación Metodo 3
+    
+    Hace referencia a la tercera condición
+    
+    Co-Authored-By: greenkarla <174214871+greenkarla@users.noreply.github.com>
+    Co-Authored-By: Jorge Andres Bravo Vidal <139006472+Reload2704@users.noreply.github.com>
+
+[33mcommit 8d3a5314f6de74550a801894921481e4b967f272[m
+Author: mapachavez <166883262+mapachavez@users.noreply.github.com>
+Date:   Sun Jul 7 02:39:09 2024 -0500
+
+    Implementacion metodo 2
+    
+    Metodo que describe verificacion 2. Comodin mismo color que juego
+
+[33mcommit dea14d5940590e3848b4060a12d5531478fba2c5[m
+Author: mapachavez <166883262+mapachavez@users.noreply.github.com>
+Date:   Sun Jul 7 02:09:46 2024 -0500
+
+    Metodo primeraValidación
+
+[33mcommit 5a52b7a92b090e6d90fb876286bf639a413cd279[m
+Author: Reload2704 <joranbra@espol.edu.ec>
+Date:   Sat Jul 6 23:47:17 2024 -0500
+
+    Arreglo de bug
+
+[33mcommit bf452583de65b1ebd1c83f065f1842e244cde452[m
+Author: mapachavez <166883262+mapachavez@users.noreply.github.com>
+Date:   Sat Jul 6 23:20:09 2024 -0500
+
+    turno maquina
+
+[33mcommit fb0799e01ab82e9393d2eb289cf31be86b84cdf9[m
+Author: mapachavez <166883262+mapachavez@users.noreply.github.com>
+Date:   Sat Jul 6 22:40:42 2024 -0500
+
+    mejora condiciones de quinta y segunda regla
+
+[33mcommit cbf1e6c4b97c3873f0bd1a54dca079192a1598bd[m
+Author: mapachavez <166883262+mapachavez@users.noreply.github.com>
+Date:   Sat Jul 6 21:57:31 2024 -0500
+
+    actualizacion NextLIne
+
+[33mcommit 0ff47270adfc5884662e569fdbbb4cb5379ee1e7[m
+Author: mapachavez <166883262+mapachavez@users.noreply.github.com>
+Date:   Sat Jul 6 21:53:20 2024 -0500
+
+    acrualizacion
+
+[33mcommit 372b0e5cc44445d4e6cb40ab0cb612a014c25f64[m
+Author: mapachavez <166883262+mapachavez@users.noreply.github.com>
+Date:   Sat Jul 6 21:23:52 2024 -0500
+
+    mejoras
+
+[33mcommit 55487d4f3ef5054581d9cfcbdc9f05ef100a9884[m
+Author: mapachavez <166883262+mapachavez@users.noreply.github.com>
+Date:   Sat Jul 6 21:18:30 2024 -0500
+
+    correciones
+
+[33mcommit 99d80b7360e54a6d5ca49b0c86b7ffe8916b0fd8[m
+Author: mapachavez <166883262+mapachavez@users.noreply.github.com>
+Date:   Sat Jul 6 21:17:09 2024 -0500
+
+    correcciones equals
+
+[33mcommit e5f24e49f6b8b7e3eef00b19957f3e6ac0f7ce27[m
+Author: mapachavez <166883262+mapachavez@users.noreply.github.com>
+Date:   Sat Jul 6 19:51:33 2024 -0500
+
+    Corrección error enum
+
+[33mcommit 24c23b5e1b3c0eabd0a13d810f14ca3116b1a03d[m
+Author: mapachavez <166883262+mapachavez@users.noreply.github.com>
+Date:   Sat Jul 6 19:49:38 2024 -0500
+
+    Implementación regla 4
+
+[33mcommit 566bacd82d039394a8b95c91fb60e3c3dba63c16[m
+Author: mapachavez <166883262+mapachavez@users.noreply.github.com>
+Date:   Sat Jul 6 19:45:32 2024 -0500
+
+    Cambio uso metodo
+
+[33mcommit 258bfc65f07b85a4966bdd6b510df0e8c50eeaca[m
+Author: mapachavez <166883262+mapachavez@users.noreply.github.com>
+Date:   Sat Jul 6 19:30:46 2024 -0500
+
+    Implementación validacion carta
+    
+    Implementación de turnos y primeras reglas de juego
+
+[33mcommit 9b5fab2477d3055b2face99bcbeb369ba7208637[m
+Author: Reload2704 <joranbra@espol.edu.ec>
+Date:   Sat Jul 6 12:21:29 2024 -0500
+
+    Creacion de metodos: robarCarta en Juego y anadirCarta en Jugador
+
+[33mcommit 09f3b4e26222a409da6042ac84e3e9c6f4bb173d[m
+Author: Reload2704 <joranbra@espol.edu.ec>
+Date:   Sat Jul 6 12:07:10 2024 -0500
+
+    Creacion del metodo Iniciar Juego y dependencias.
+
+[33mcommit a38bc0f55f06a201644608a18f9272eac73dc9cc[m
+Author: Reload2704 <joranbra@espol.edu.ec>
+Date:   Sat Jul 6 11:37:10 2024 -0500
+
+    Actualizacion de Constructor Juego
+
+[33mcommit e32d586e41b87477350e19f7463c22d093ed6cbf[m
+Author: Reload2704 <joranbra@espol.edu.ec>
+Date:   Sat Jul 6 11:34:57 2024 -0500
+
+    Creacion de instancia Juego
+
+[33mcommit 524e798abe12e5711f310a30a2ee61acd655a31f[m
+Author: Reload2704 <joranbra@espol.edu.ec>
+Date:   Sat Jul 6 11:31:51 2024 -0500
+
+    Setter mano para Jugador
+
+[33mcommit 5069c00ca3edb5447065594e9a922f9ecc6830e1[m
+Author: Reload2704 <joranbra@espol.edu.ec>
+Date:   Sat Jul 6 11:30:01 2024 -0500
+
+    Archivos class
+
+[33mcommit 3c132683c2e468ebff522dbbac3ba81dc4a2b13c[m
+Merge: 86bf129 3ed59ac
+Author: Reload2704 <joranbra@espol.edu.ec>
+Date:   Sat Jul 6 11:27:55 2024 -0500
+
+    Merge branch 'main' of https://github.com/Reload2704/UNO-GameProject
+
+[33mcommit 86bf129bb9beadfebffd2b11a3b9c0993ae38b2c[m
+Author: Reload2704 <joranbra@espol.edu.ec>
+Date:   Sat Jul 6 11:27:44 2024 -0500
+
+    Creacion de la base del juego.
+
+[33mcommit 3ed59ac28969b9efec68121c35b9a8e76bf933b1[m
+Author: mapachavez <166883262+mapachavez@users.noreply.github.com>
+Date:   Sat Jul 6 11:22:20 2024 -0500
+
+    Comment se agrega 9 cartas de cada color a la baraja
+
+[33mcommit 52617de01cfd4aa0a7fcceaf758157d3c8729ad3[m
+Author: Reload2704 <joranbra@espol.edu.ec>
+Date:   Sat Jul 6 11:11:43 2024 -0500
+
+    Modificación al constructor Jugador
+
+[33mcommit ddf7c713838ddc8d5e3b3bf42f9c1f1a66c721ca[m
+Author: Reload2704 <joranbra@espol.edu.ec>
+Date:   Sat Jul 6 11:10:20 2024 -0500
+
+    Actualización Clase Juego
+
+[33mcommit cfb938b472fad1297e25d85867b9730fb964aad1[m
+Author: mapachavez <166883262+mapachavez@users.noreply.github.com>
+Date:   Sat Jul 6 10:54:00 2024 -0500
+
+    Add files via upload
+
+[33mcommit a4bbbabe9b53f3f919e65857864504e2f4e2ec11[m
+Merge: 5ebc476 8fb50b6
+Author: Reload2704 <joranbra@espol.edu.ec>
+Date:   Wed Jul 3 18:30:08 2024 -0500
+
+    Merge branch 'main' of https://github.com/Reload2704/UNO-GameProject
+
+[33mcommit 5ebc47600c0d0bd6d8f8d80b98bafe2b222ddce6[m
+Author: Reload2704 <joranbra@espol.edu.ec>
+Date:   Wed Jul 3 18:29:55 2024 -0500
+
+    Creacion de Constructor. Actualizacion de metodos.
+
+[33mcommit 8fb50b6b540b3544707524832a079ef6c8f6a71a[m
+Author: Jorge Andres Bravo Vidal <139006472+Reload2704@users.noreply.github.com>
+Date:   Wed Jul 3 18:18:41 2024 -0500
+
+    Update UML
+
+[33mcommit 7c31fc394ec1af30f1a3d17bcaa87cafcf9b0f22[m
+Author: Jorge Andres Bravo Vidal <139006472+Reload2704@users.noreply.github.com>
+Date:   Wed Jul 3 18:18:18 2024 -0500
+
+    Delete UNO-GameProject-UML.png
+
+[33mcommit 4d78cc46cf60f75e29816457fcd7d4a436989bae[m
+Author: Jorge Andres Bravo Vidal <139006472+Reload2704@users.noreply.github.com>
+Date:   Wed Jul 3 18:17:38 2024 -0500
+
+    Actualizacion UML
+
+[33mcommit 50d25d2dc18ffc576b7326e39bc1e25e63fc7647[m
+Author: Jorge Andres Bravo Vidal <139006472+Reload2704@users.noreply.github.com>
+Date:   Wed Jul 3 18:16:18 2024 -0500
+
+    Actualizacion UML
+
+[33mcommit f34afe16e815825d1f1f5bd077af2dfea71ffe0e[m
+Author: Reload2704 <joranbra@espol.edu.ec>
+Date:   Wed Jul 3 18:11:54 2024 -0500
+
+    Baraja deja de ser Clase y se convierte en atributo de Juego
+
+[33mcommit bdbd87cfba615eddcffa374a1843cae7b4c23805[m
+Author: Reload2704 <joranbra@espol.edu.ec>
+Date:   Wed Jul 3 16:18:33 2024 -0500
+
+    Actualizacion de constructor
+
+[33mcommit 7bb6df961c9e0cd68fe203967e1e23c374bab927[m
+Author: Reload2704 <joranbra@espol.edu.ec>
+Date:   Wed Jul 3 16:15:26 2024 -0500
+
+    Modificacion toString
+
+[33mcommit aa6e3565dd9fc3576bd2923aed6beb2600deaeff[m
+Author: Reload2704 <joranbra@espol.edu.ec>
+Date:   Wed Jul 3 16:13:24 2024 -0500
+
+    Modifiacion toString
+
+[33mcommit 8059a0484951673c285b6f45d1ff26ff9ee286ad[m
+Author: Reload2704 <joranbra@espol.edu.ec>
+Date:   Wed Jul 3 16:11:00 2024 -0500
+
+    Creacion de Constructor Jugador. Arreglo de metodo.
+
+[33mcommit 4037a24c09a7162e77950902ec289fd9b028ca4a[m
+Author: greenkarla <ktvelasc@espol.edu.ec>
+Date:   Wed Jul 3 13:21:43 2024 -0500
+
+    termine la clase jugador
+
+[33mcommit ebfe3a2cfc558cd24933f5f92b24775dcfb0b046[m
+Author: greenkarla <ktvelasc@espol.edu.ec>
+Date:   Wed Jul 3 13:14:23 2024 -0500
+
+    metodos de jugadores listo
+
+[33mcommit 1ad9a111c639019aa7e320e8da96578cb34e0d29[m
+Author: greenkarla <ktvelasc@espol.edu.ec>
+Date:   Wed Jul 3 13:14:01 2024 -0500
+
+    termine la clase jugador
+
+[33mcommit 202a9897cb38044475ec8b5314c94fb7d99d85e5[m
+Author: greenkarla <ktvelasc@espol.edu.ec>
+Date:   Wed Jul 3 11:11:08 2024 -0500
+
+    ultima actualizacion
+
+[33mcommit ebd38a8797130ecacdadd5e0f940206744248689[m
+Author: greenkarla <ktvelasc@espol.edu.ec>
+Date:   Wed Jul 3 10:45:00 2024 -0500
+
+    cambios en jugador
+
+[33mcommit d678bc1d236b8194442100433437aadf93070fc3[m
+Author: greenkarla <ktvelasc@espol.edu.ec>
+Date:   Wed Jul 3 10:44:47 2024 -0500
+
+    realice mas cambios
+
+[33mcommit fcb2b79465ecd90b1fb316f286f8d437bf9fd48f[m
+Author: greenkarla <ktvelasc@espol.edu.ec>
+Date:   Wed Jul 3 10:12:19 2024 -0500
+
+    añadi la mano del jugador
+
+[33mcommit 7ffd1dddc2ecc92c1314b8c3d159830b4e4aad92[m
+Author: greenkarla <ktvelasc@espol.edu.ec>
+Date:   Wed Jul 3 10:12:04 2024 -0500
+
+    añadi la mano del jugador
+
+[33mcommit a7f5a0ff8a930e2bb265fa8985621a7588196c33[m
+Author: greenkarla <ktvelasc@espol.edu.ec>
+Date:   Tue Jul 2 21:18:34 2024 -0500
+
+    añadi toda la baraja
+
+[33mcommit 01d6d2c350fee72ad90923e5cd1e21cea07251cc[m
+Author: greenkarla <ktvelasc@espol.edu.ec>
+Date:   Tue Jul 2 17:24:14 2024 -0500
+
+    realice metodo baraja
+
+[33mcommit 9c1cbb5b3a1b38a8520055ec89443b1b7c499575[m
+Author: greenkarla <ktvelasc@espol.edu.ec>
+Date:   Tue Jul 2 15:45:53 2024 -0500
+
+    realice la baraja completa
+
+[33mcommit fb9bd808cb37779834d9724a9b5bd0584b2d23dc[m
+Author: greenkarla <ktvelasc@espol.edu.ec>
+Date:   Tue Jul 2 14:15:16 2024 -0500
+
+    realice cambio en baraja
+
+[33mcommit 100ddd77e68a9f369b30ba3225de032aa45a7528[m
+Author: greenkarla <ktvelasc@espol.edu.ec>
+Date:   Mon Jul 1 23:12:36 2024 -0500
+
+    intento hacer la baraja aletoria
+
+[33mcommit d83bdf80c8699dee41ba1c05693bfbd0a954501e[m
+Author: greenkarla <ktvelasc@espol.edu.ec>
+Date:   Mon Jul 1 22:08:06 2024 -0500
+
+    añadi varios metodos
+
+[33mcommit ac070b02cebaebfb75f134cf7e45a07357eec2aa[m
+Author: greenkarla <ktvelasc@espol.edu.ec>
+Date:   Mon Jul 1 18:16:28 2024 -0500
+
+    añadi un metodo para robar carta
+
+[33mcommit fce7429bf94ad9e95fe91db6cdb9c3a7727422c6[m
+Author: greenkarla <ktvelasc@espol.edu.ec>
+Date:   Mon Jul 1 17:49:19 2024 -0500
+
+    realice el deck
+
+[33mcommit ed9c6024113cc32906bb62dfbc4d50bb44d009fa[m
+Author: greenkarla <ktvelasc@espol.edu.ec>
+Date:   Mon Jul 1 15:12:55 2024 -0500
+
+    actualizacion - metodo nuevo
+
+[33mcommit f2d8eb537e3aec25370dfc2e0edf48d889ed918e[m
+Author: Reload2704 <joranbra@espol.edu.ec>
+Date:   Sat Jun 29 22:43:26 2024 -0500
+
+    Agregar perfil de github de contribuidores
+
+[33mcommit 4cb27fd4a50dabc8c3fc96e68985ece097ea274b[m
+Author: Reload2704 <joranbra@espol.edu.ec>
+Date:   Sat Jun 29 22:37:24 2024 -0500
+
+    Creacion de clases y enums
+
+[33mcommit 07d9e6030828dd9ca60e45b8611c09ba4095d3b5[m
+Author: Jorge Andres Bravo Vidal <139006472+Reload2704@users.noreply.github.com>
+Date:   Sat Jun 29 14:37:04 2024 -0500
+
+    Diagrama UML del proyecto
+
+[33mcommit ceec3703352c84f93c07dfd1c705e7e951a30d98[m
+Author: Reload2704 <joranbra@espol.edu.ec>
+Date:   Sat Jun 29 14:30:09 2024 -0500
+
+    Añadir carpeta del Proyecto Java
+
+[33mcommit 366b04ae474e5a3f450b7533b390309b1af75f0f[m
+Author: Jorge Andres Bravo Vidal <139006472+Reload2704@users.noreply.github.com>
+Date:   Wed Jun 19 23:15:10 2024 -0500
+
+    Update README.md
+    
+    Actualización del archivo README.md con información detallada sobre el proyecto UNO-GameProject, incluyendo características, tecnologías utilizadas y contribuidores.
+
+[33mcommit ef51c510bf599a4166a345e5168b8ddf81c461d7[m
+Author: Jorge Andres Bravo Vidal <139006472+Reload2704@users.noreply.github.com>
+Date:   Wed Jun 19 22:55:29 2024 -0500
+
+    Initial commit
