@@ -55,14 +55,15 @@ public class Juego {
                 System.out.println("Mano actualizado: "+jugador.getMano());
             }
                 Scanner sc = new Scanner (System.in);
-                boolean yes=false;
+                int cont = 0;
                 for(Carta c: jugador.getMano()){
                     if(Utilitaria.validacionGeneral(c,ultcarta)){
-                        yes=true;
+                        cont+=1;
                     }
                 }
-                    System.out.println("Se puede jugar?"+yes);
-                if(yes==false){
+
+                if(cont==0){
+                    System.out.println("Usted ha robado una carta!");
                     jugador.anadirCarta(robarCarta());
                     turno=1;
                 }
