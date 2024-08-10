@@ -4,7 +4,7 @@ public abstract class Carta {
     protected Color color;
     
 
-    public Carta(Color color){
+    protected Carta(Color color){
         this.color = color;
     }
 
