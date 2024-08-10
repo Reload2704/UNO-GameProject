@@ -44,6 +44,7 @@ public class Jugador {
                     CartaEspecial ceret = ce;
                     int idxrd = rd.nextInt(colores.length-1);
                     ceret.setColor(colores[idxrd]);
+                    System.out.println("Se ha cambiado el color de la carta a: "+colores[idxrd]);
                     mano.remove(ce);
                     return ceret;
                 }
