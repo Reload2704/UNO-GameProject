@@ -95,12 +95,20 @@ public class Juego {
                     }
                     //Tercera regla
                     else if(Utilitaria.isNegro(CEajugar)){
-                        System.out.println("¿Cuál será el color para el siguiente turno?");
-                        String colornew= sc.nextLine();
-                        sc.nextLine();
-                        Color [] colores ={Color.ROJO,Color.AMARILLO,Color.VERDE,Color.AZUL};
                         CartaEspecial cartaCambiada=CEajugar;
-                        cartaCambiada.setColor(Color.valueOf(colornew));
+                        String colornew;
+                        do{
+                            System.out.println("¿Cuál será el color para el siguiente turno?");
+                            colornew= sc.nextLine();
+                            sc.nextLine();
+                            try{
+                                cartaCambiada.setColor(Color.valueOf(colornew.toUpperCase()));
+                            }catch (IllegalArgumentException e){
+                                System.out.println("Color no válido. Por favor, ingrese un color válido.");
+                            }
+                        }while(cartaCambiada.getColor() == Color.NEGRO);
+                        
+                        
                         lineaDeJuego.add(cartaCambiada);
                         jugador.jugarCarta(position);
                         System.out.println(colornew);
