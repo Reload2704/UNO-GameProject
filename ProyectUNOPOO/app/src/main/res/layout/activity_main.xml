@@ -5,15 +5,180 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:backgroundTint="#FFFFFF"
+    android:visibility="visible"
     tools:context=".MainActivity">
 
-    <TextView
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.9" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.85" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.15" />
+
+    <TextView
+        android:id="@+id/textView"
+        style="@style/newtext"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/abril_fatface"
+        android:text="Bienvenido al Uno Espol"
+        android:textColor="#5B6A55"
+        android:textColorLink="#5B6A55"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline6"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toTopOf="@+id/guideline4" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.30" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.35" />
+
+    <EditText
+        android:id="@+id/usuario_juego"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:ems="10"
+        android:hint="Ingrese su nombre"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:textColor="#0D0D0D"
+        android:textColorHint="#CFE0C4"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline8"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toTopOf="@+id/guideline7" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.45" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.50" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.54" />
+
+    <TextView
+        android:id="@+id/salaCodigo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:fontFamily="@font/abril_fatface"
+        android:text="Ingrese el codigo de la sala"
+        android:textColor="#000000"
+        android:textColorLink="#0F000000"
+        app:layout_constraintBottom_toTopOf="@+id/guideline9"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toTopOf="@+id/guideline8" />
+
+    <EditText
+        android:id="@+id/codigo"
+        android:layout_width="217dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:ellipsize="start"
+        android:ems="10"
+        android:hint="Codigo"
+        android:inputType="numberPassword"
+        android:minHeight="48dp"
+        android:scrollbarSize="4dp"
+        android:textColorHighlight="#A4C193"
+        android:textColorHint="#A6C197"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline10"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toTopOf="@+id/guideline9" />
+
+    <Button
+        android:id="@+id/ingresar"
+        android:layout_width="256dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginEnd="35dp"
+        android:fontFamily="@font/abril_fatface"
+        android:shadowColor="#A03737"
+        android:text="Ingrese al Juego"
+        android:textColor="#FDFCFC"
+        android:textColorHighlight="#DBB5B5"
+        android:textColorHint="#7A9D72"
+        android:textColorLink="#84968C"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline12"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toTopOf="@+id/guideline11"
+        app:rippleColor="#814949"
+        app:strokeColor="#E9C9C9" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.58" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.65" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="58dp"
+        android:layout_height="98dp"
+        app:srcCompat="@drawable/captura_de_pantalla_2024_08_11_014442"
+        tools:layout_editor_absoluteX="302dp"
+        tools:layout_editor_absoluteY="284dp"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
