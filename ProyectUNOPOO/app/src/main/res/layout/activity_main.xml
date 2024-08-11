@@ -181,4 +181,29 @@
         tools:layout_editor_absoluteY="284dp"
         tools:ignore="MissingConstraints" />
 
+    <Button
+        android:id="@+id/crearSala"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:layout_marginEnd="35dp"
+        android:fontFamily="@font/abril_fatface"
+        android:text="Crear una nueva sala"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        tools:layout_editor_absoluteY="473dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="37dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/abril_fatface"
+        android:text="- o - "
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/crearSala"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/ingresar" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
