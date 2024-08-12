@@ -4,6 +4,7 @@ import java.util.Random;
 
 public class Jugador {
     private String nombre;
+    private Random rd = new Random();
     private ArrayList<Carta> mano = new ArrayList<>();
 
     public Jugador(String nombre){
@@ -39,10 +40,9 @@ public class Jugador {
 
                 //Tercera regla
                 else if(Utilitaria.isNegro(ce)){
-                    Random rd = new Random();
                     Color [] colores = {Color.ROJO,Color.AMARILLO,Color.VERDE,Color.AZUL};
                     CartaEspecial ceret = ce;
-                    int idxrd = rd.nextInt(colores.length-1);
+                    int idxrd = this.rd.nextInt(colores.length-1);
                     ceret.setColor(colores[idxrd]);
                     System.out.println("Se ha cambiado el color de la carta a: "+colores[idxrd]);
                     mano.remove(ce);
