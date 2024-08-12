@@ -67,17 +67,10 @@ public class Utilitaria {
     }
 
     //Cuarta condición(recibe la ultimacarta de linea de juego o la carta de juego  e indica si es un +2 o +4)
-    public static boolean iscomodin(Carta cartaplay){
-        if(cartaplay instanceof CartaEspecial){
-        CartaEspecial ct=(CartaEspecial)cartaplay;
-            if(ct.getTipo()==(TipoEspecial.MAS2) || ct.getTipo()==(TipoEspecial.MAS4)){
-                return true;
-             }
-        else
-             return false;
-        }
-    else
-        return false;
+    public static boolean iscomodin(Carta cartaplay) {
+        return cartaplay instanceof CartaEspecial && 
+               (((CartaEspecial) cartaplay).getTipo() == TipoEspecial.MAS2 || 
+                ((CartaEspecial) cartaplay).getTipo() == TipoEspecial.MAS4);
     }
 
     //Quinta condición(recibe la carta a jugar y la ultima carta de linea de juego)
