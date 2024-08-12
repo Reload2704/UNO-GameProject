@@ -4,28 +4,22 @@ import java.util.Collections;
 import java.util.Random;
 
 public class Utilitaria {
+
+    private Utilitaria(){
+        throw new IllegalStateException("Clase Utilitaria");
+    }
     
     public static ArrayList<Carta> crearBaraja(){
         ArrayList<Carta> baraja = new ArrayList<>();
-//Se agrega 9 cartas de cada color a la baraja
-        for(int a = 0; a<10; a++){
-            Carta cartaRojo = new CartaNumerica(Color.ROJO, a);
-            baraja.add(cartaRojo);
-        }
-        for(int e= 0; e<10; e++){
-            Carta cartaAmarillo = new CartaNumerica(Color.AMARILLO, e);
-            baraja.add(cartaAmarillo);
-        }
-        for(int o = 0; o<10;o++){
-            Carta cartaAzul = new CartaNumerica(Color.AZUL, o);
-            baraja.add(cartaAzul);
-        }
-        for( int u = 0; u<10; u++){
-            Carta cartaVerde = new CartaNumerica(Color.VERDE, u);
-            baraja.add(cartaVerde);
+        Color [] colores = {Color.ROJO,Color.AMARILLO,Color.VERDE,Color.AZUL};
+        //Se agrega 9 cartas de cada color a la baraja
+        for (int i = 0; i < 10; i++) {
+            for (Color color : colores) {
+                Carta carta = new CartaNumerica(color, i);
+                baraja.add(carta);
+            }
         }
         TipoEspecial [] especial = {TipoEspecial.REVERSE,TipoEspecial.BLOQUEO,TipoEspecial.MAS2,TipoEspecial.MAS4};
-        Color [] colores = {Color.ROJO,Color.AMARILLO,Color.VERDE,Color.AZUL};
         for(int ba = 1; ba<3; ba++){
             for(Color color: colores){
                 for(TipoEspecial cardEspecial : especial){

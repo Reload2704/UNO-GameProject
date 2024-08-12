@@ -40,18 +40,17 @@ public class Juego {
                 System.out.println("Ultima Carta: "+ultcarta);
             //Cuarta regla(SOLO PARA AGARRAR CARTA)
             if(Utilitaria.iscomodin(ultcarta)){ //se usa la validacion que indica si es +2 o +4 (true basta que solo 1 sea)
-                System.out.println("Validacion4");
                 CartaEspecial ct=(CartaEspecial)ultcarta;
                 if(ct.getTipo()==TipoEspecial.MAS2){ //si la carta es +2 agarra +2 cartas a su baraja
                     for(int i = 0; i<2; i++){
                         jugador.anadirCarta(robarCarta());
-                        System.out.println("Robaste!");
                     }
+                    System.out.println("Has robado 2 cartas!");
                 } else if(ct.getTipo()==TipoEspecial.MAS4){
                     for(int i = 0; i<4; i++){ //si no es +2, significa que es +4. entonces agarra 4 cartas
                         jugador.anadirCarta(robarCarta());
-                        System.out.println("Robaste!");
                     }
+                    System.out.println("Has robado 4 cartas!");
                 }
                 System.out.println("Mano actualizado: "+jugador.getMano());
             }
@@ -125,7 +124,6 @@ public class Juego {
                     }
                     //Cuarta regla(SOLO PARA AGARRAR CARTA)
                     else if(Utilitaria.iscomodin(ultcarta)){ //se usa la validacion que indica si es +2 o +4 (true basta que solo 1 sea)
-                        System.out.println("Validacion4");
                         CartaEspecial ct=(CartaEspecial)ultcarta;
                         if(ct.getTipo()==TipoEspecial.MAS2){ //si la carta es +2 agarra +2 cartas a su baraja
                             for(int i = 0; i<2; i++){
@@ -161,18 +159,17 @@ public class Juego {
 
                 //Validacion si ultCarta es Especial de tipo +2 o +4
                 if(Utilitaria.iscomodin(ultcarta)){ //se usa la validacion que indica si es +2 o +4 (true basta que solo 1 sea)
-                    System.out.println("Validacion4");
                     CartaEspecial ct=(CartaEspecial)ultcarta;
                     if(ct.getTipo()==TipoEspecial.MAS2){ //si la carta es +2 agarra +2 cartas a su baraja
                         for(int i = 0; i<2; i++){
                             maquina.anadirCarta(robarCarta());
-                            System.out.println("Robaste!");
                         }
+                        System.out.println("La máquina robó 2 cartas!");
                     } else if(ct.getTipo()==TipoEspecial.MAS4){
                         for(int i = 0; i<4; i++){ //si no es +2, significa que es +4. entonces agarra 4 cartas
                             maquina.anadirCarta(robarCarta());
-                            System.out.println("Robaste!");
                         }
+                        System.out.println("La máquina robó 4 cartas!");
                     }
                     System.out.println("Mano actualizado: " + maquina.getMano());
                 }
