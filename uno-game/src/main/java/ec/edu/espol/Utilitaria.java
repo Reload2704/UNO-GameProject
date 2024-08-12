@@ -93,16 +93,10 @@ public class Utilitaria {
     //es ultcarta comodin? (Está siendo usada en la quinta condicion para validar que carta de bloqueo y reversa
     //se pueden responder entre si , independiente del color ) BLOQUEO ROJO-BLOQUEO AMARILLO / REVERSE ROJO-REVERSE AZUL
 
-    public static boolean ulCartaescomodin(Carta ulCarta, Carta cartaajugar){
-        if(ulCarta instanceof CartaEspecial && cartaajugar instanceof CartaEspecial){
-            CartaEspecial ct=(CartaEspecial)ulCarta;
-            CartaEspecial playercarta=(CartaEspecial)cartaajugar;
-            if(ct.getTipo()==playercarta.getTipo()){
-                return true;
-            }
-            return false;
-        }
-        return false;
+    public static boolean ulCartaescomodin(Carta ulCarta, Carta cartaajugar) {
+        return ulCarta instanceof CartaEspecial &&
+               cartaajugar instanceof CartaEspecial &&
+               ((CartaEspecial) ulCarta).getTipo() == ((CartaEspecial) cartaajugar).getTipo();
     }
 
     //ESta validadacion se usa para agregar a linea de juego cartas +2 y +4
