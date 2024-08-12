@@ -6,6 +6,7 @@ public class Juego {
     private ArrayList<Carta> baraja;
     private Jugador jugador;
     private Jugador maquina;
+    private Random rd = new Random();
     private ArrayList<Carta> lineaDeJuego;
     
     public Juego(ArrayList<Carta> baraja, Jugador jugador, Jugador maquina, ArrayList<Carta> lineaDeJuego) {
@@ -207,10 +208,9 @@ public class Juego {
 
     //-------------------METODOS--------------------//
     public ArrayList<Carta> crearMano(){
-        Random rd = new Random();
         ArrayList<Carta> manoJug = new ArrayList<>();
         for(int i = 0; i<7; i++){
-            manoJug.add(baraja.remove(rd.nextInt(baraja.size())));
+            manoJug.add(baraja.remove(this.rd.nextInt(baraja.size())));
         }
         return manoJug;
     }
