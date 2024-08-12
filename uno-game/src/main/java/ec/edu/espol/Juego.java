@@ -147,6 +147,7 @@ public class Juego {
                         System.out.println("Su carta no es valida, por favor repita");
                 }
                 Utilitaria.lastCarta(jugador.getMano());
+                sc.close();
             }
             } if(turno==1){
                 
