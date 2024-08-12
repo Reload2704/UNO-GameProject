@@ -8,10 +8,6 @@ public class CartaNumerica extends Carta{
         this.valor = valor;
     }
     
-    public boolean esValida(Carta CartaActual){
-        return true;
-    }
-
     public int getValor() {
         return valor;
     }

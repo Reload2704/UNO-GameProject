@@ -7,12 +7,6 @@ public class CartaEspecial extends Carta{
         super(color);
         this.tipo = tipo;
     }
-    public boolean esValida(Carta CartaActual){
-        return true;
-    }
-    public boolean esComodin(){
-        return true;
-    }
     public TipoEspecial getTipo() {
         return tipo;
     }
