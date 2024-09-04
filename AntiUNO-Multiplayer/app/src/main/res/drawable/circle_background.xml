@@ -1,0 +1,7 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@android:color/white" /> <!-- Color de relleno del círculo -->
+    <stroke
+        android:width="2dp"
+        android:color="@android:color/black" /> <!-- Color y grosor del borde -->
+    <corners android:radius="50dp" /> <!-- Asegura que sea un círculo perfecto -->
+</shape>
