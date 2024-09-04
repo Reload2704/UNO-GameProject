@@ -28,5 +28,7 @@ public class Main {
         Juego juego = new Juego(baraja,jug1,maq,lineaJuego);
         juego.iniciarJuego();
         sc.close();*/
+
+        
     }
 }
